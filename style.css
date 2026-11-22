@@ -1094,7 +1094,7 @@ background: linear-gradient(
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     transition: transform .4s ease;
 }
@@ -1277,8 +1277,8 @@ background: linear-gradient(
 
     #featuredProducts.cc-product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 13px;
-        padding: 0;
+        gap: 15px;
+        padding: 15;
         box-sizing: border-box;
     }
 
@@ -1368,12 +1368,12 @@ background: linear-gradient(
     #featuredProducts.cc-product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 15px;
-        padding: 15;
+        padding: 15px;
         box-sizing: border-box;
     }
 
     #featuredProducts.cc-product-grid > .featured-card > a:first-child {
-        height: 240px;
+        height: 250px;
     }
 
     #featuredProducts.cc-product-grid .featured-info {
@@ -1439,14 +1439,14 @@ background: linear-gradient(
     }
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px) {
+@media screen and (min-width: 381px) and (max-width: 767px) {
     #featuredProducts .featured-buttons button.featured-cart-btn,
     #featuredProducts .featured-buttons button.featured-buy-btn {
         font-size: 12px !important;
     }
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 380px) {
     #featuredProducts .featured-buttons button.featured-cart-btn,
     #featuredProducts .featured-buttons button.featured-buy-btn {
         font-size: 10px !important;
