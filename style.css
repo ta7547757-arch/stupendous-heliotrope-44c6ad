@@ -1347,7 +1347,7 @@ background: linear-gradient(
 }
 
 
-/* SMALL MOBILE: 320px - 374px */
+/* SMALL MOBILE: 320px - 380px */
 
 @media screen and (max-width: 380px) {
 
@@ -1367,13 +1367,13 @@ background: linear-gradient(
 
     #featuredProducts.cc-product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 9px;
-        padding: 0;
+        gap: 15px;
+        padding: 15;
         box-sizing: border-box;
     }
 
     #featuredProducts.cc-product-grid > .featured-card > a:first-child {
-        height: 220px;
+        height: 240px;
     }
 
     #featuredProducts.cc-product-grid .featured-info {
