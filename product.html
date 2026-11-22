@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product | Bintaah</title>
+
+    <link rel="stylesheet" href="style.css">
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+
+   
+    <!-- TOGGLE BUTTON - LEFT -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- LOGO - CENTER -->
+    <div class="logo">
+        <img src="logo.png" alt="Bintaah Logo">
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Our Collection</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- SEARCH + ACCOUNT + CART - RIGHT -->
+    <div class="header-icons">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search borka..." />
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <a href="account.html" class="account-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.2"/>
+                <path d="M5.5 20c.8-3.4 3.1-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/>
+            </svg>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M6 8h12l1 13H5L6 8Z"/>
+                <path d="M9 8a3 3 0 0 1 6 0"/>
+            </svg>
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- PRODUCT DETAILS -->
+
+<section class="product-details">
+
+    <!-- LEFT: PRODUCT GALLERY -->
+
+    <div class="product-gallery">
+
+        <div class="thumbnail-list" id="thumbnailList"></div>
+
+        <div class="main-product-image">
+            <img id="mainProductImage" src="" alt="">
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT: PRODUCT INFORMATION -->
+
+    <div class="product-details-info">
+
+        <p class="product-label">BINTAAH COLLECTION</p>
+
+        <h1 id="productName">Loading...</h1>
+
+        <div class="product-price" id="productPrice">
+            ৳ 0
+        </div>
+
+        <p class="product-description" id="productDescription"></p>
+
+
+        <!-- SIZE -->
+
+        <div class="size-section">
+
+            <h3>Select Size</h3>
+
+            <div class="size-options">
+
+                <button type="button" class="size-btn">52</button>
+                <button type="button" class="size-btn">54</button>
+                <button type="button" class="size-btn">56</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUANTITY -->
+
+        <div class="quantity-section">
+
+            <h3>Quantity</h3>
+
+            <div class="quantity-box">
+
+                <button type="button" id="minusBtn">−</button>
+
+                <span id="quantity">1</span>
+
+                <button type="button" id="plusBtn">+</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTONS -->
+
+        <div class="product-action-buttons">
+
+            <button type="button" class="product-buy-btn" id="buyNowBtn">
+                BUY NOW
+            </button>
+
+            <button type="button" class="product-cart-btn" id="addToCartBtn">
+                ADD TO CART
+            </button>
+
+        </div>
+
+
+        <!-- EXTRA INFO -->
+
+        <div class="product-extra">
+
+            <p>
+                <strong>Fabric:</strong> Premium Zoom Fabric
+            </p>
+
+            <p>
+                <strong>Delivery:</strong> Inside Dhaka ৳60 | Outside Dhaka ৳120
+            </p>
+
+            <p>
+                <strong>Payment:</strong> Cash on Delivery
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS DATA -->
+
+<script src="products.js"></script>
+
+
+<script>
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const productId = urlParams.get("id");
+
+const product = products.find(function(item) {
+    return String(item.id) === String(productId);
+});
+
+
+/* CHECK PRODUCT */
+
+if (!product) {
+
+    document.getElementById("productName").textContent =
+        "Product not found";
+
+} else {
+
+    /* PRODUCT NAME */
+
+    document.getElementById("productName").textContent =
+        product.name;
+
+
+    /* PRICE */
+
+    document.getElementById("productPrice").textContent =
+        "৳ " + Number(product.price).toLocaleString();
+
+
+    /* DESCRIPTION */
+
+    document.getElementById("productDescription").textContent =
+        product.description ||
+        "A beautifully designed modest borka featuring elegant embroidery, premium fabric and a graceful loose silhouette. Perfect for everyday wear and special occasions.";
+
+// MAIN IMAGE
+const mainImage =
+    document.getElementById("mainProductImage");
+
+mainImage.src = product.mainImage;
+mainImage.alt = product.name;
+
+
+// THUMBNAILS
+const thumbnailList =
+    document.getElementById("thumbnailList");
+
+thumbnailList.innerHTML = "";
+
+product.thumbnails.forEach(function(image, index) {
+
+    const img = document.createElement("img");
+
+    img.src = image;
+    img.alt = product.name + " thumbnail " + (index + 1);
+
+    img.addEventListener("click", function() {
+
+        mainImage.src = image;
+
+    });
+
+    thumbnailList.appendChild(img);
+
+});
+
+    /* PAGE TITLE */
+
+    document.title =
+        product.name + " | Bintaah";
+
+}
+
+
+/* SIZE */
+
+let selectedSize = null;
+
+const sizeButtons =
+    document.querySelectorAll(".size-btn");
+
+
+sizeButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        sizeButtons.forEach(function(btn) {
+            btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+        selectedSize = button.textContent;
+
+    });
+
+});
+
+
+/* QUANTITY */
+
+let quantity = 1;
+
+const quantityDisplay =
+    document.getElementById("quantity");
+
+
+document.getElementById("minusBtn")
+.addEventListener("click", function() {
+
+    if (quantity > 1) {
+
+        quantity--;
+
+        quantityDisplay.textContent = quantity;
+
+    }
+
+});
+
+
+document.getElementById("plusBtn")
+.addEventListener("click", function() {
+
+    quantity++;
+
+    quantityDisplay.textContent = quantity;
+
+});
+
+
+/* ADD TO CART */
+
+document.getElementById("addToCartBtn")
+.addEventListener("click", function() {
+
+    if (!product) {
+        alert("Product not found.");
+        return;
+    }
+
+    if (!selectedSize) {
+
+        alert("Please select a size.");
+
+        return;
+
+    }
+
+
+    let cart =
+        JSON.parse(localStorage.getItem("bintaahCart")) || [];
+
+
+    const cartItem = {
+
+        id: product.id,
+
+        name: product.name,
+
+        price: Number(product.price),
+
+        image: product.mainImage,
+
+        size: selectedSize,
+
+        quantity: quantity
+
+    };
+
+
+    cart.push(cartItem);
+
+
+    localStorage.setItem(
+        "bintaahCart",
+        JSON.stringify(cart)
+    );
+
+
+    alert("Product added to cart!");
+
+
+});
+
+/* BUY NOW */
+document.getElementById("buyNowBtn")
+.addEventListener("click", function() {
+    if (!product) {
+        alert("Product not found.");
+        return;
+    }
+
+    if (!selectedSize) {
+        alert("Please select a size.");
+        return;
+    }
+
+    const buyNowProduct = {
+        id: product.id,
+        name: product.name,
+        price: Number(product.price),
+        image: product.mainImage,
+        size: selectedSize,
+        quantity: quantity
+    };
+
+    localStorage.setItem(
+        "bintaahCart",
+        JSON.stringify([buyNowProduct])
+    );
+
+    window.location.href = "checkout.html";
+});
+</script>
+
+
+<!-- BINTAAH PREMIUM FOOTER -->
+<footer class="bintaah-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            
+            <h2 class="brand-name">About Bintaah</h2>
+            
+
+            <p class="brand-tagline">
+                where elegance meets style
+            </p>
+
+            <div class="brand-divider">
+                <span></span><i>◆</i><span></span>
+            </div>
+
+            <p class="brand-description">
+                Bintaah is more than a brand,<br>
+                it's a reflection of faith, modesty<br>
+                and timeless elegance. We bring you<br>
+                premium borkas, hijabs and modest<br>
+                fashion for the modern Muslimah.
+            </p>
+
+            <p class="brand-values">
+                Modesty <b>·</b> Elegance <b>·</b> Grace
+            </p>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="footer-column">
+            <div class="column-icon flower-icon">❀</div>
+            <h3>Explore</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+				 <li><a href="shop.html">Our Collection</a></li>
+               <li><a href="about.html">About Us</a></li>
+                
+                 <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER CARE -->
+        <div class="footer-column">
+            <div class="column-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Customer Care</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="shipping and delivery.html">Delivery &amp; Shipping</a></li>
+                <li><a href="return  policy.html">Return Policy</a></li>
+				 <li><a href="term and conditions.html">Terms &amp; Conditions</a></li> 
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-column social-column">
+            <div class="column-icon heart-icon">♡</div>
+            <h3>Stay Connected</h3>
+            <div class="heading-line"></div>
+
+            <p class="social-description">
+                Follow our journey and be<br>
+                a part of our modest community.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://www.whatsapp.com/"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="footer-benefits">
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>Fast &amp; Secure<br>Delivery</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <p>100% Genuine<br>Products</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Modest Fashion<br>For a Better You</p>
+        </div>
+
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Bintaah by Choynika.
+            All rights reserved.
+        </p>
+
+        <div class="bottom-ornament">
+            <span></span>
+            <i>✿</i>
+            <span></span>
+        </div>
+    </div>
+
+</footer>
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".mobile-menu-btn");
+    const menu = document.querySelector(".header .menu");
+
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+});
+</script>
+
+
+</body>
+
+
+</html>

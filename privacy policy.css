@@ -1,0 +1,1413 @@
+
+/* =========================================================
+   BINTAAH — PRIVACY POLICY PAGE
+   Premium Plum • Lavender • Rose
+   Clean CSS | No Duplicate Rules
+========================================================= */
+
+
+/* =========================================================
+   01. PRIVACY HERO — DESKTOP
+========================================================= */
+
+.privacy-hero {
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(43, 16, 49, 0.18) 0%,
+            rgba(43, 16, 49, 0.08) 55%,
+            rgba(43, 16, 49, 0.02) 100%
+        ),
+        url("pri.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.privacy-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 75px 70px;
+
+    left: 2%;
+
+    box-sizing: border-box;
+    color: #fffafc;
+}
+
+.privacy-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: #f2d9eb;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.privacy-eyebrow span {
+    color: #e5bb8d;
+}
+
+.privacy-hero-content h1 {
+    margin: 0;
+
+    color: #fffafd;
+    font-family: Georgia, serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.privacy-hero-line {
+    width: 190px;
+    height: 2px;
+
+    margin: 25px 0;
+
+    background: linear-gradient(
+        90deg,
+        #e8bd91,
+        #f5d9e9,
+        transparent
+    );
+}
+
+.privacy-hero-content p {
+    max-width: 560px;
+
+    margin: 0 0 25px;
+
+    color: #fff0f8;
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+.privacy-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 20px;
+
+    border: 1px solid rgba(242, 207, 224, 0.75);
+    border-radius: 40px;
+
+    color: #fff5fb;
+    background: rgba(57, 25, 62, 0.30);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.updated-icon {
+    color: #f0c18f;
+}
+
+
+/* =========================================================
+   02. INTRODUCTION
+========================================================= */
+
+.privacy-introduction {
+    max-width: 100%;
+height: 450px;
+    margin: -40px auto;
+    padding: 50px 25px 25px;
+
+    text-align: center;
+    background: #FFEDFD;
+
+    box-sizing: border-box;
+}
+
+.intro-label {
+    margin-top: 40px;
+    margin-bottom: 28px;
+
+    color: #a47d3e;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.intro-decoration,
+.signature-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    margin-bottom: 28px;
+}
+
+.intro-decoration span,
+.signature-ornament span {
+    width: 55px;
+    height: 1px;
+    background: #c6a76b;
+}
+
+.intro-decoration i,
+.signature-ornament i {
+    color: #b28a43;
+    font-size: 12px;
+    font-style: normal;
+}
+
+.privacy-introduction p {
+    max-width: 760px;
+
+    margin: 0 auto 18px;
+
+    color: #685b6b;
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.privacy-introduction .intro-large {
+    color: #4b285d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   03. POLICY AREA
+========================================================= */
+
+.policy-area {
+    max-width: 1180px;
+
+    margin: 0 auto;
+    padding: 20px 25px 40px;
+
+    box-sizing: border-box;
+}
+
+
+/* HEADING */
+
+.policy-heading {
+	margin-top: 50px;
+    margin-bottom: 65px;
+    text-align: center;
+}
+
+.policy-heading span {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: #80608b;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.policy-heading h2 {
+    margin: 0;
+
+    color: #351c3e;
+
+    font-family: Georgia, serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.policy-heading h2 em {
+    color: #9a5e91;
+    font-style: italic;
+}
+
+
+/* POLICY GRID */
+
+.policy-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* POLICY CARD */
+
+.luxury-policy-card {
+    position: relative;
+
+    min-height: 100%;
+    padding: 32px 30px 34px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(90, 55, 100, 0.10);
+    border-radius: 24px;
+
+    box-shadow: 0 12px 35px rgba(70, 40, 80, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* CARD DECORATIONS */
+
+.luxury-policy-card::before {
+    content: "";
+
+    position: absolute;
+    top: -65px;
+    right: -55px;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.30);
+}
+
+.luxury-policy-card::after {
+    content: "";
+
+    position: absolute;
+    bottom: -30px;
+    left: -30px;
+
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* CARD COLORS */
+
+.luxury-policy-card:nth-child(1) {
+    background: linear-gradient(135deg, #f1e5f5, #ead9ef);
+}
+
+.luxury-policy-card:nth-child(2) {
+    background: linear-gradient(135deg, #eee3fa, #dfcff3);
+}
+
+.luxury-policy-card:nth-child(3) {
+    background: linear-gradient(135deg, #f8e5ee, #f1d5e3);
+}
+
+.luxury-policy-card:nth-child(4) {
+    background: linear-gradient(135deg, #eee8dc, #e7ddca);
+}
+
+.luxury-policy-card:nth-child(5) {
+    background: linear-gradient(135deg, #e5f0ed, #d7e8e3);
+}
+
+.luxury-policy-card:nth-child(6) {
+    background: linear-gradient(135deg, #e5e8f5, #d6daec);
+}
+
+.luxury-policy-card:nth-child(7) {
+    background: linear-gradient(135deg, #f4e5d9, #efd6c4);
+}
+
+.luxury-policy-card:nth-child(8) {
+    background: linear-gradient(135deg, #f0e1f1, #e4cfe6);
+}
+
+.luxury-policy-card:nth-child(9) {
+    background: linear-gradient(135deg, #e3eef2, #d2e4e9);
+}
+
+.luxury-policy-card:nth-child(10) {
+    background: linear-gradient(135deg, #f3e5ef, #e8d3e2);
+}
+
+.luxury-policy-card:nth-child(11) {
+    background: linear-gradient(135deg, #eee5d5, #e6d9c2);
+}
+
+.luxury-policy-card:nth-child(12) {
+    background: linear-gradient(135deg, #f3e0ed, #e6d2e9);
+}
+
+.luxury-policy-card:nth-child(12) .card-number {
+    background: rgba(255,255,255,0.68);
+    color: #78466f;
+}
+
+.luxury-policy-card:nth-child(12) .gold-symbol {
+    background: rgba(255,255,255,0.58);
+    color: #8c527f;
+}
+
+
+/* CARD HOVER */
+
+.luxury-policy-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 20px 45px rgba(70, 40, 80, 0.13);
+}
+
+.luxury-policy-card:nth-child(12):hover {
+    box-shadow: 0 20px 45px rgba(120, 70, 110, 0.14);
+}
+
+
+/* CARD NUMBER */
+
+.card-number {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 27px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.65);
+
+    color: #684475;
+    font-family: Georgia, serif;
+    font-size: 18px;
+
+    box-shadow: 0 5px 15px rgba(70,40,80,0.08);
+}
+
+
+/* CARD BODY */
+
+.card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+}
+
+.card-top span {
+    color: #765b7d;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.gold-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.55);
+    color: #8b5b82;
+
+    font-size: 12px;
+
+    transition: transform 0.3s ease;
+}
+
+.luxury-policy-card:hover .gold-symbol {
+    transform: rotate(20deg) scale(1.08);
+}
+
+
+/* CARD TITLE */
+
+.card-body h3 {
+    margin: 0 0 14px;
+
+    color: #351c3e;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+/* CARD PARAGRAPH */
+
+.card-body p {
+    margin: 0 0 13px;
+
+    color: #625565;
+    font-size: 13.5px;
+    line-height: 1.85;
+}
+
+
+/* CARD LIST */
+
+.card-body ul {
+    margin: 16px 0 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.card-body li {
+    position: relative;
+
+    margin-bottom: 8px;
+    padding-left: 20px;
+
+    color: #625565;
+    font-size: 13.5px;
+    line-height: 1.7;
+}
+
+.card-body li::before {
+    content: "✦";
+
+    position: absolute;
+    top: 1px;
+    left: 0;
+
+    color: #9a638f;
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   04. CONTACT SECTION
+========================================================= */
+
+.privacy-contact {
+    position: relative;
+
+    max-width: 1400px;
+
+    margin: 10px auto 10px;
+    padding: 35px 25px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #321d39,
+        #4c2b56 55%,
+        #36203d
+    );
+
+    box-shadow: 0 25px 70px rgba(47,27,54,.22);
+
+    box-sizing: border-box;
+	border-radius:50px;
+}
+
+.privacy-contact::before,
+.privacy-contact::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 1px solid rgba(220,190,125,.18);
+    border-radius: 50%;
+}
+
+.privacy-contact::before {
+    top: -180px;
+    right: -150px;
+}
+
+.privacy-contact::after {
+    bottom: -180px;
+    left: -150px;
+    border-color: rgba(220,190,125,.12);
+}
+
+.contact-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-star {
+    margin-bottom: 22px;
+
+    color: #d9b978;
+    font-size: 25px;
+}
+
+.contact-inner > span {
+    color: #d9b978;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.contact-inner h2 {
+    margin: 18px 0;
+
+    color: #fff;
+
+    font-family: Georgia, serif;
+    font-size: 58px;
+    font-weight: 400;
+}
+
+.contact-inner p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: rgba(255,255,255,.78);
+    font-size: 20px;
+    line-height: 1.9;
+}
+
+.contact-inner a {
+    display: inline-block;
+
+    padding: 10px 30px;
+
+    border: 1px solid #d8b878;
+    border-radius: 40px;
+
+    background: #d8b878;
+    color: #352039;
+
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+    transition: .3s;
+}
+
+.contact-inner a:hover {
+    background: transparent;
+    color: #fff;
+}
+
+.contact-email {
+    margin-top: 18px;
+
+    color: #d8c8a4;
+
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   05. LUXURY SIGNATURE
+========================================================= */
+
+.privacy-signature {
+    position: relative;
+
+    margin-bottom: 10px;
+    padding: 55px 20px 35px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(210,185,232,.16),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #e8d9e9 0%,
+            #d9c4dc 48%,
+            #cbb1d0 100%
+        );
+
+    box-sizing: border-box;
+	border-radius:70px;
+}
+
+.privacy-signature::before {
+    content: "";
+
+    position: absolute;
+    top: -190px;
+    left: 50%;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,.10);
+
+    transform: translateX(-50%);
+    filter: blur(8px);
+}
+
+.privacy-signature::after {
+    content: "";
+
+    position: absolute;
+    right: -60px;
+    bottom: -100px;
+
+    width: 180px;
+    height: 180px;
+
+    border: 1px solid rgba(191,155,91,.13);
+    border-radius: 50%;
+}
+
+
+/* TOP ORNAMENT */
+
+.signature-top {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    width: 220px;
+
+    margin: 0 auto 30px;
+}
+
+.signature-top span,
+.signature-bottom span {
+    flex: 1;
+    height: 1px;
+}
+
+.signature-top span {
+    background: linear-gradient(90deg, transparent, #c6a568);
+}
+
+.signature-top span:last-child {
+    background: linear-gradient(90deg, #c6a568, transparent);
+}
+
+.signature-top i {
+    color: #b28a4a;
+    font-size: 18px;
+    font-style: normal;
+
+    text-shadow: 0 2px 8px rgba(178,138,74,.20);
+}
+
+
+/* BRAND */
+
+.signature-brand {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signature-brand small {
+    margin-bottom: 14px;
+
+    color: #a98a65;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+.signature-brand h1 {
+    margin: 0;
+
+    color: #4b285d;
+
+    font-family: "Bodoni 72", "Didot", "Baskerville", Georgia, serif;
+    font-size: 104px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 2px;
+
+    text-shadow: 0 4px 18px rgba(75,40,93,.08);
+}
+
+.signature-sub {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 8px;
+}
+
+.signature-sub span {
+    color: #a28772;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.signature-sub strong {
+    color: #8c6636;
+
+    font-family: "Bodoni 72", "Didot", Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.signature-brand p {
+    margin: 18px 0 0;
+
+    color: #806a79;
+
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+
+/* BOTTOM ORNAMENT */
+
+.signature-bottom {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 180px;
+
+    margin: 30px auto 0;
+}
+
+.signature-bottom span {
+    background: linear-gradient(90deg, transparent, rgba(177,139,72,.65));
+	height:2px;
+	
+}
+
+.signature-bottom span:last-child {
+    background: linear-gradient(90deg, rgba(177,139,72,.65), transparent);
+}
+
+.signature-bottom i {
+    color: #b28a4a;
+    font-size: 12px;
+    font-style: normal;
+}
+
+
+/* =========================================================
+   06. TABLET — 768px to 1024px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* HERO */
+
+    .privacy-hero {
+        height: 400px;
+        min-height: 400px;
+
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+    .privacy-hero-content {
+        left: 4%;
+        padding: 55px 35px;
+    }
+   .privacy-eyebrow {
+	   font-size:16px;
+	   margin-bottom: 5px;
+   }
+
+    .privacy-hero-content h1 {
+        font-size: 60px;
+    }
+
+    .privacy-hero-content p {
+        max-width: 350px;
+        font-size: 22px;
+    }
+
+
+    /* INTRO */
+
+    .privacy-introduction {
+        padding: 55px 25px 35px;
+    }
+
+    .privacy-introduction .intro-large {
+        font-size: 25px;
+    }
+
+
+    /* POLICY */
+
+    .policy-area {
+        padding: 20px 22px 50px;
+    }
+
+    .policy-heading span {
+	font-size:   24px;
+  }
+
+    .policy-heading {
+        margin-bottom: 45px;
+    }
+
+    .policy-heading h2 {
+        font-size: 38px;
+    }
+
+    .policy-list {
+        gap: 18px;
+    }
+
+    .luxury-policy-card {
+        padding: 28px 23px 30px;
+    }
+.card-top span {
+	font-size: 13px;
+}
+	
+	.card-body p{
+		font-size:18px;
+	}
+		
+		.card-body li {
+			font-size:18px;
+		}
+		
+    .card-body h3 {
+        font-size: 28px;
+    }
+
+
+    /* CONTACT */
+
+    .privacy-contact {
+        margin: 10px 22px 70px;
+        padding: 55px 25px;
+		border-radius: 50px;
+    }
+  .contact-inner > span {
+	  font-size:15px;
+  }
+
+    .contact-inner h2 {
+        font-size: 50px;
+    }
+  .contact-inner p {
+	  font-size: 24px;
+  }
+   .contact-inner a{
+	   font-size : 22px;
+   }
+   .contact-email {
+	   font-size: 18px;
+   }
+   .contact-star {
+   font-size: 24px;
+   }
+   
+    /* SIGNATURE */
+
+    .privacy-signature {
+		width:96%;
+		left:2%;
+        padding: 50px 20px 40px;
+		margin-top:-50px;
+				border-radius: 50px;
+margin-bottom:10px;
+    }
+	.signature-brand h1 {
+		font-size:82px;
+	}
+
+	.signature-brand small {
+		font-size:14px;
+	}
+	
+	.signature-sub {
+		font-size:14px;
+	}
+	
+.signature-sub span {
+	font-size:22px;
+	}
+	.signature-sub strong {
+font-size:28px;
+	}
+	
+		.signature-brand p{
+			font-size: 30px;
+		}
+
+		.signature-bottom span{
+			height:3px;
+		}
+
+
+		.signature-bottom {
+        width:360px;
+		}
+	.signature-bottom i {
+		font-size: 15px;
+	}
+}
+
+
+/* =========================================================
+   07. MOBILE — 381px to 767px
+========================================================= */
+
+@media (min-width: 381px) and (max-width: 767px) {
+
+    /* HERO */
+
+    .privacy-hero {
+        height: 260px;
+        min-height: 260px;
+
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+    .privacy-hero-content {
+        left: -12%;
+      
+    }
+
+    .privacy-eyebrow {
+        gap: 5px;
+        margin-bottom: 10px;
+
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .privacy-hero-content h1 {
+        font-size: 28px;
+    }
+
+    .privacy-hero-line {
+        margin: 12px 0;
+    }
+
+    .privacy-hero-content p {
+        max-width: 200px;
+        margin-bottom: 10px;
+
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .privacy-updated {
+        gap: 7px;
+		font-size:13px;
+        padding: 6px 8px;
+    }
+
+
+    /* INTRO */
+
+    .privacy-introduction {
+        margin: 0px auto;
+        padding: 45px 20px 30px;
+		height:380px;
+    }
+
+    .intro-label {
+        margin-top: -1px;
+		margin-bottom:10px;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    .intro-decoration,
+    .signature-ornament {
+		margin-top:10px;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .intro-decoration span,
+    .signature-ornament span {
+        width: 50px;
+    }
+
+    .privacy-introduction .intro-large {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .privacy-introduction p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+
+    /* POLICY */
+
+    .policy-area {
+        padding: 0px 16px 55px;
+    }
+
+    .policy-heading {
+        margin-bottom: 30px;
+    }
+
+    .policy-heading span {
+		
+        font-size: 20px;
+    }
+
+    .policy-heading h2 {
+        font-size: 28.4px;
+    }
+
+    .policy-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .luxury-policy-card {
+        padding: 26px 23px 30px;
+        border-radius: 25px;
+    }
+
+    .card-number {
+        width: 46px;
+        height: 46px;
+
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    .card-top span {
+        font-size: 12px;
+    }
+
+    .card-body h3 {
+        font-size: 28px;
+    }
+
+    .card-body p,
+    .card-body li {
+        font-size: 18px;
+    }
+
+
+    /* CONTACT */
+
+    .privacy-contact {
+        margin: -10px 16px 55px;
+        padding: 45px 20px;
+    }
+ .contact-inner > span{ 
+ font-size: 13px;
+ letter-spacing: 1px ;
+ line-height: 1.2;
+ }
+    .contact-inner h2 {
+        font-size: 38.5px;
+    }
+
+    .contact-inner p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .contact-inner a {
+        padding: 11px 25px;
+        font-size: 18px;
+    }
+	.contact-email {
+		font-size:18px;
+	}
+
+
+    /* SIGNATURE */
+
+    .privacy-signature {
+	   margin: -40px 16px 25px;
+        padding: 45px 20px;
+        
+    }
+
+    .signature-brand h1 {
+        font-size: 84px;
+    }
+
+    .signature-brand p {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+}
+
+
+/* =========================================================
+   08. SMALL MOBILE — 380px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+
+    /* HERO */
+
+    .privacy-hero {
+        height: 250px;
+        min-height: 250px;
+
+        background-size: 100% 100%;
+        background-position: center;
+    }
+
+    .privacy-hero-content {
+        left: 0%;
+        padding: 12px 20px;
+    }
+
+    .privacy-eyebrow {
+        gap: 4px;
+        margin-bottom: 8px;
+
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .privacy-hero-content h1 {
+        font-size: 30px;
+    }
+
+    .privacy-hero-line {
+        width: 130px;
+        margin: 9px 0;
+    }
+
+    .privacy-hero-content p {
+        max-width: 210px;
+        margin-bottom: 8px;
+
+        font-size: 13px;
+        line-height: 1.45;
+    }
+
+    .privacy-updated {
+		font-size:10.5px;
+        gap: 4px;
+        padding: 4px 8px;
+    }
+
+
+    /* INTRO */
+
+    .privacy-introduction {
+        margin: -35px auto;
+        padding: 35px 15px 25px;
+		height:400px;
+    }
+
+    .intro-label {
+        font-size: 14px;
+        letter-spacing: 1px;
+		margin-bottom:10px;
+    }
+
+    .privacy-introduction .intro-large {
+		margin-top:-15px;
+        font-size: 20px;
+    }
+
+    .privacy-introduction p {
+        font-size: 15px;
+    }
+
+
+    /* POLICY */
+	 .policy-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+
+    .policy-area {
+        padding: 15px 12px 45px;
+    }
+
+    .policy-heading {
+        margin-bottom: 30px;
+    }
+
+    .policy-heading span {
+        font-size: 18px;
+    }
+
+    .policy-heading h2 {
+        font-size: 28.5px;
+    }
+
+    .luxury-policy-card {
+        padding: 23px 19px 26px;
+        border-radius: 18px;
+    }
+
+    .card-number {
+        width: 42px;
+        height: 42px;
+
+        margin-bottom: 18px;
+        font-size: 15px;
+    }
+	.card-top span {
+        font-size: 12px;
+    }
+
+
+    .card-body h3 {
+        font-size: 26px;
+    }
+
+    .card-body p,
+    .card-body li {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+
+    /* CONTACT */
+
+    .privacy-contact {
+        margin: 10px 12px 45px;
+        padding: 38px 16px;
+    }
+
+    .contact-inner > span {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .contact-inner h2 {
+        font-size: 35px;
+    }
+
+    .contact-inner p {
+        font-size: 15px;
+		margin-bottom: 12px;
+    }
+
+    .contact-inner a {
+        padding: 6px 28px;
+        font-size: 18px;
+    }
+	.contact-email {
+		font-size: 14px;
+	}
+	
+
+
+    /* SIGNATURE */
+
+    .privacy-signature {
+        padding: 38px 15px 35px;
+    }
+
+    .signature-top {
+        width: 170px;
+        margin-bottom: 23px;
+    }
+
+    .signature-brand small {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .signature-brand h1 {
+        font-size: 64px;
+    }
+	
+	    .signature-sub span {
+        font-size: 26px;
+    }
+
+
+    .signature-sub strong {
+        font-size: 26px;
+    }
+
+    .signature-brand p {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .signature-bottom {
+        width: 145px;
+        margin-top: 23px;
+    }
+}
+
+
+/* =========================================================
+   09. ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .luxury-policy-card,
+    .gold-symbol,
+    .contact-inner a {
+        transition: none;
+    }
+
+    .luxury-policy-card:hover {
+        transform: none;
+    }
+}

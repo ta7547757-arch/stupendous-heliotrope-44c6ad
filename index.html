@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bintaah</title>
+
+    <link rel="stylesheet" href="style.css">
+	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+
+    <!-- TOGGLE BUTTON - LEFT -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- LOGO - CENTER -->
+    <div class="logo">
+        <img src="logo.png" alt="Bintaah Logo">
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Our Collection</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- SEARCH + ACCOUNT + CART - RIGHT -->
+    <div class="header-icons">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search borka..." />
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <a href="account.html" class="account-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.2"/>
+                <path d="M5.5 20c.8-3.4 3.1-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/>
+            </svg>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M6 8h12l1 13H5L6 8Z"/>
+                <path d="M9 8a3 3 0 0 1 6 0"/>
+            </svg>
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PREMIUM HERO BANNER ================= -->
+
+<section class="hero">
+
+    <!-- EXISTING BANNER IMAGE -->
+    <div class="hero-image">
+        <img src="hero banner.jpg" alt="Bintaah Modest Fashion Collection">
+    </div>
+
+    <!-- SOFT TEXT BACKGROUND -->
+    <div class="hero-content">
+
+        <p class="hero-eyebrow">
+            B I N T A A H &nbsp; B Y &nbsp; C H O Y N I K A
+        </p>
+
+        <span class="hero-decor-line"></span>
+
+        <h1>
+            Elegance in<br>
+            Every <span>Layer.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Modesty, Beautifully Expressed.
+        </p>
+
+        <p class="hero-text">
+            Discover thoughtfully designed borkas that bring
+            together modesty, comfort and timeless elegance.
+        </p>
+
+        <a href="shop.html" class="hero-shop-btn">
+            EXPLORE THE COLLECTION
+            <span class="hero-btn-arrow">↗</span>
+        </a>
+
+        <p class="hero-bottom-note">
+            TIMELESS MODEST FASHION
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ===== BINTAAH COLORFUL COLLECTION ===== -->
+
+<section class="colorful-collection" id="featured">
+
+    <div class="cc-heading">
+
+        <span class="cc-kicker">✦ THE BINTAAH EDIT ✦</span>
+
+        <h2>
+            Find Your
+            <span>Beautifully Modest Style</span>
+        </h2>
+
+        <p>
+            A little elegance, a touch of colour,
+            and a style that feels like you.
+        </p>
+
+        <div class="cc-decoration">
+            <span></span>
+            <b>✿</b>
+            <span></span>
+        </div>
+
+    </div>
+
+    <!-- EXISTING JAVASCRIPT PRODUCT CONNECTION -->
+    <div class="featured-grid cc-product-grid" id="featuredProducts"></div>
+
+    <div class="cc-bottom">
+
+        <p>Made for your moments. Styled for your story.</p>
+
+        <a href="shop.html" class="cc-view-btn">
+            DISCOVER ALL STYLES <span>↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="bintaah-style">
+    <div class="bintaah-style-heading">
+        <span class="style-eyebrow">✦ &nbsp; DISCOVER YOUR STYLE &nbsp; ✦</span>
+        <h2>Find Your <em>Perfect Look</em></h2>
+        <p>Different styles, same modest beauty.</p>
+    </div>
+
+    <div class="bintaah-style-grid">
+
+        <a href="shop.html" class="style-card style-lavender">
+            <div class="style-card-image"></div>
+            <div class="style-card-overlay"></div>
+            <span class="style-card-number">01</span>
+            <div class="style-card-content">
+                <span class="style-card-label">TIMELESS BEAUTY</span>
+                <h3>Classic Style</h3>
+                <p>Simple. Elegant. Forever.</p>
+                <span class="style-arrow">↗</span>
+            </div>
+        </a>
+
+        <a href="shop.html" class="style-card style-rose">
+            <div class="style-card-image"></div>
+            <div class="style-card-overlay"></div>
+            <span class="style-card-number">02</span>
+            <div class="style-card-content">
+                <span class="style-card-label">GRACE IN EVERY FOLD</span>
+                <h3>Layered Style</h3>
+                <p>More grace, more you.</p>
+                <span class="style-arrow">↗</span>
+            </div>
+        </a>
+
+        <a href="shop.html" class="style-card style-peach">
+            <div class="style-card-image"></div>
+            <div class="style-card-overlay"></div>
+            <span class="style-card-number">03</span>
+            <div class="style-card-content">
+                <span class="style-card-label">A MODERN CLASSIC</span>
+                <h3>Modern Style</h3>
+                <p>Tradition meets trend.</p>
+                <span class="style-arrow">↗</span>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="style-bottom-note">
+        <span>MODEST BY CHOICE</span>
+        <span>❀</span>
+        <span>ELEGANT BY NATURE</span>
+    </div>
+</section>
+
+
+
+<section class="bintaah-why">
+    <div class="why-heading">
+        <span class="why-eyebrow">THE BINTAAH DIFFERENCE</span>
+        <h2>Elegance You Can <em>Trust</em></h2>
+        <p>Thoughtfully chosen for your comfort, confidence and modesty.</p>
+        <span class="why-flourish">✦ ─── ❀ ─── ✦</span>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card why-lavender">
+            <div class="why-icon">✧</div>
+            <span class="why-number">01</span>
+            <h3>Premium Quality</h3>
+            <p>Carefully selected fabrics and thoughtful details for a beautiful feel.</p>
+            <span class="why-card-line"></span>
+        </div>
+
+        <div class="why-card why-rose">
+            <div class="why-icon">❀</div>
+            <span class="why-number">02</span>
+            <h3>Modest &amp; Elegant</h3>
+            <p>Beautiful designs that celebrate modesty with timeless elegance.</p>
+            <span class="why-card-line"></span>
+        </div>
+
+        <div class="why-card why-peach">
+            <div class="why-icon">❋</div>
+            <span class="why-number">03</span>
+            <h3>Unique Designs</h3>
+            <p>Distinctive touches that make everyday modest fashion feel special.</p>
+            <span class="why-card-line"></span>
+        </div>
+
+        <div class="why-card why-mint">
+            <div class="why-icon">♡</div>
+            <span class="why-number">04</span>
+            <h3>Comfort &amp; Care</h3>
+            <p>Designed with comfort in mind, with care in every detail.</p>
+            <span class="why-card-line"></span>
+        </div>
+
+    </div>
+
+    <div class="why-bottom">
+        <span class="why-bottom-flower">❀</span>
+        <p>YOUR MODESTY. YOUR STYLE. YOUR BINTAAH.</p>
+        <span class="why-bottom-flower">❀</span>
+    </div>
+</section>
+
+
+<section class="bintaah-bestsellers">
+  <div class="boutique-intro">
+    <span class="boutique-eyebrow">THE BINTAAH EDIT</span>
+    <h2>Bestsellers</h2>
+    <p>Timeless elegance, chosen for you.</p>
+    <span class="boutique-divider"></span>
+  </div>
+
+  <div class="boutique-products">
+
+    <article class="boutique-product">
+      <a href="product.html" class="boutique-product-image">
+        <img src="borka 17.jpg" alt="Nooraya Black Borka">
+      </a>
+      <div class="boutique-product-info">
+        <span class="boutique-product-type">SIGNATURE COLLECTION</span>
+        <h3>Aurelia Black 🌸
+</h3>
+        <p class="boutique-price">৳ 2,900</p>
+        <a href="product.html?id=5" class="boutique-shop-link">
+    SHOP NOW
+</a>
+
+      </div>
+    </article>
+
+    <article class="boutique-product">
+      <a href="product.html" class="boutique-product-image">
+        <img src="borka 37.jpg" alt="Safa Royale Borka">
+      </a>
+      <div class="boutique-product-info">
+        <span class="boutique-product-type">PREMIUM COLLECTION</span>
+        <h3>Aafiya Grace 🌸
+</h3>
+        <p class="boutique-price">৳ 3200</p>
+        <a href="product.html?id=11" class="boutique-shop-link">SHOP NOW</a>
+      </div>
+    </article>
+
+    <article class="boutique-product">
+      <a href="product.html" class="boutique-product-image">
+        <img src="borka 53.jpg" alt="Elegant Borka">
+      </a>
+      <div class="boutique-product-info">
+        <span class="boutique-product-type">MODEST ESSENTIALS</span>
+        <h3>Mahira Luxe 🌸</h3>
+        <p class="boutique-price">৳ 3100</p>
+        <a href="product.html?id=11" class="boutique-shop-link">SHOP NOW</a>
+      </div>
+    </article>
+
+    <article class="boutique-product">
+      <a href="product.html" class="boutique-product-image">
+        <img src="borka 47.jpg" alt="Luxury Borka">
+      </a>
+      <div class="boutique-product-info">
+        <span class="boutique-product-type">LUXURY COLLECTION</span>
+        <h3>Rukaiya Luxe 🌸
+</h3>
+        <p class="boutique-price">৳ 2,900</p>
+        <a href="product.html?id=6" class="boutique-shop-link">SHOP NOW</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="boutique-view-all">
+    <a href="shop.html">EXPLORE ALL BESTSELLERS &rarr;</a>
+  </div>
+</section>
+
+
+
+
+<section class="bintaah-details">
+
+    <div class="details-heading">
+        <span class="details-ornament">❀</span>
+        <h2>The Art of Every Detail</h2>
+        <p>Every stitch tells a story of elegance.</p>
+    </div>
+
+    <div class="details-grid">
+
+        <!-- Image 1 -->
+        <div class="detail-card">
+            <img src="embrodery.jpg"
+                 alt="Beautiful embroidery details">
+            <div class="detail-info">
+                <span>✿</span>
+                <h3>Embroidery Details</h3>
+                <p>Intricate embroidery that adds a touch of grace and uniqueness.</p>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="detail-card">
+            <img src="sleeve.jpg"
+                 alt="Elegant embroidered sleeves">
+            <div class="detail-info">
+                <span>❀</span>
+                <h3>Elegant Sleeves</h3>
+                <p>Graceful sleeves designed for modesty and modern elegance.</p>
+            </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="detail-card">
+            <img src="fabric.jpg"
+                 alt="Premium Zoom fabric">
+            <div class="detail-info">
+                <span>✧</span>
+                <h3>Premium Fabric</h3>
+                <p>Luxurious Zoom fabric for all-day comfort and a refined look.</p>
+            </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="detail-card">
+            <img src="design.jpg"
+                 alt="Beautiful borka design details">
+            <div class="detail-info">
+                <span>❁</span>
+                <h3>Timeless Design</h3>
+                <p>Thoughtful details that make every design truly special.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<section class="bintaah-reviews">
+  <div class="bintaah-reviews__inner">
+
+    <div class="bintaah-reviews__eyebrow">
+      <span></span>
+      KIND WORDS &amp; FEEDBACK
+      <span></span>
+    </div>
+
+    <h2 class="bintaah-reviews__title">Customer Reviews</h2>
+
+    <p class="bintaah-reviews__intro">
+      Every detail tells a story. Discover what our valued customers<br class="desktop-break">
+      love about their Bintaah experience.
+    </p>
+
+    <div class="bintaah-reviews__ornament">
+      <span></span><b>✿</b><span></span>
+    </div>
+
+    <div class="bintaah-reviews__grid">
+
+      <article class="bintaah-review-card">
+        <div class="bintaah-review-card__quote-mark">“</div>
+        <div class="bintaah-review-card__stars">★★★★★</div>
+
+        <p class="bintaah-review-card__text">
+          The quality is amazing and the fabric feels so comfortable.
+          I love the modest yet stylish designs. Definitely my new
+          favorite online boutique!
+        </p>
+
+        <div class="bintaah-review-card__customer">
+          <img src="customer 1.jpg" alt="Ayesha Khan portrait">
+          <div>
+            <h3>Ayesha Khan</h3>
+            <p>VALUED CUSTOMER</p>
+          </div>
+        </div>
+
+        <span class="bintaah-review-card__sprig">❧</span>
+      </article>
+
+      <article class="bintaah-review-card bintaah-review-card--featured">
+        <div class="bintaah-review-card__quote-mark">“</div>
+        <div class="bintaah-review-card__stars">★★★★★</div>
+
+        <p class="bintaah-review-card__text">
+          I absolutely adore the elegant styles and beautiful details.
+          Bintaah truly understands modest fashion with a modern touch.
+          The packaging was also so lovely!
+        </p>
+
+        <div class="bintaah-review-card__customer">
+          <img src="customer 2.jpg" alt="Sadia Rahman portrait">
+          <div>
+            <h3>Sadia Rahman</h3>
+            <p>VALUED CUSTOMER</p>
+          </div>
+        </div>
+
+        <span class="bintaah-review-card__sprig">❧</span>
+      </article>
+
+      <article class="bintaah-review-card">
+        <div class="bintaah-review-card__quote-mark">“</div>
+        <div class="bintaah-review-card__stars">★★★★★</div>
+
+        <p class="bintaah-review-card__text">
+          The collection is simply beautiful! The colours, fabric
+          and fit are all perfect. I feel graceful and confident
+          every time I wear my Bintaah pieces.
+        </p>
+
+        <div class="bintaah-review-card__customer">
+          <img src="customer 3.jpg" alt="Mariam Noor portrait">
+          <div>
+            <h3>Mariam Noor</h3>
+            <p>VALUED CUSTOMER</p>
+          </div>
+        </div>
+
+        <span class="bintaah-review-card__sprig">❧</span>
+      </article>
+
+    </div>
+
+    <div class="bintaah-reviews__bottom-ornament">
+      <span></span><b>♡</b><span></span>
+    </div>
+
+    <p class="bintaah-reviews__footer">
+      REAL PEOPLE <i>♥</i> REAL STORIES <i>♥</i> BINTAAH
+    </p>
+
+  </div>
+</section>
+
+<!-- ABOUT BINTAAH SECTION -->
+
+<section class="bintaah-about">
+
+    <!-- Heading -->
+    <div class="about-heading">
+        <span class="about-ornament">❀</span>
+        <h2>A Little More About Bintaah</h2>
+        <p>More than just fashion — it’s a way of life.</p>
+    </div>
+
+    <div class="about-content">
+
+        <!-- Left Image Collage -->
+        <div class="about-gallery">
+
+            <div class="about-small-images">
+                <img src="slv.jpg" alt="Borka embroidery">
+                <img src="details.jpg" alt="Premium fabric">
+                <img src="box.jpg" alt="Bintaah packaging">
+            </div>
+
+            <div class="about-main-image">
+                <img src="main.jpg" alt="Bintaah modest fashion">
+            </div>
+
+        </div>
+
+        <!-- Right Content -->
+        <div class="about-text">
+
+            <div class="about-label">
+                OUR STORY
+                <span></span>
+            </div>
+
+            <h3>Modest Fashion<br>with a Meaning</h3>
+
+            <p class="about-description">
+                At Bintaah, we believe modesty is not a limitation,
+                it’s a form of elegance. Our journey began with a simple
+                dream — to create beautiful, high-quality borkas and hijabs
+                that make every woman feel confident, graceful and close
+                to her values. Each design is thoughtfully crafted with
+                premium fabric, fine details and a deep respect for
+                tradition and modern lifestyle.
+            </p>
+
+            <div class="about-signature">Bintaah</div>
+
+            <div class="about-divider"></div>
+
+            <!-- Features -->
+            <div class="about-features">
+
+                <div class="about-feature">
+                    <div class="feature-icon">♧</div>
+                    <h4>Premium Quality</h4>
+                    <p>Only the finest fabrics for lasting comfort.</p>
+                </div>
+
+                <div class="about-feature">
+                    <div class="feature-icon">♡</div>
+                    <h4>Modest & Elegant</h4>
+                    <p>Designed to celebrate your true beauty.</p>
+                </div>
+
+                <div class="about-feature">
+                    <div class="feature-icon">◇</div>
+                    <h4>Unique Designs</h4>
+                    <p>Because you deserve something special.</p>
+                </div>
+
+                <div class="about-feature">
+                    <div class="feature-icon">♧</div>
+                    <h4>Faith Inspired</h4>
+                    <p>Fashion with values, for every step.</p>
+                </div>
+
+            </div>
+
+            <a href="about.html" class="about-button">
+                Our Journey <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- BINTAAH NEWSLETTER SECTION -->
+
+<section class="bintaah-newsletter">
+
+    <div class="newsletter-content">
+
+        <span class="newsletter-label">
+            ✦ &nbsp; A LITTLE NOTE FROM BINTAAH &nbsp; ✦
+        </span>
+
+        <h2>
+            Stay in <em>Bloom</em>
+        </h2>
+
+        <div class="newsletter-divider">
+            <span></span>
+            ❀
+            <span></span>
+        </div>
+
+        <p>
+            Be the first to discover our latest collections,
+            exclusive updates and timeless modest inspirations.
+        </p>
+
+        <form class="newsletter-form" id="newsletterForm">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe <span>→</span>
+            </button>
+
+        </form>
+
+        <small class="newsletter-note">
+            ✧ Elegance in your inbox, always.
+        </small>
+
+        <p id="newsletterMessage" class="newsletter-message"></p>
+
+    </div>
+
+</section>
+<!-- END NEWSLETTER SECTION -->
+
+
+<!-- BINTAAH PREMIUM FOOTER -->
+<footer class="bintaah-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            
+            <h2 class="brand-name">About Bintaah</h2>
+            
+
+            <p class="brand-tagline">
+                where elegance meets style
+            </p>
+
+            <div class="brand-divider">
+                <span></span><i>◆</i><span></span>
+            </div>
+
+            <p class="brand-description">
+                Bintaah is more than a brand,<br>
+                it's a reflection of faith, modesty<br>
+                and timeless elegance. We bring you<br>
+                premium borkas, hijabs and modest<br>
+                fashion for the modern Muslimah.
+            </p>
+
+            <p class="brand-values">
+                Modesty <b>·</b> Elegance <b>·</b> Grace
+            </p>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="footer-column">
+            <div class="column-icon flower-icon">❀</div>
+            <h3>Explore</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+				 <li><a href="shop.html">Our Collection</a></li>
+               <li><a href="about.html">About Us</a></li>
+                
+                 <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER CARE -->
+        <div class="footer-column">
+            <div class="column-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Customer Care</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="shipping and delivery.html">Delivery &amp; Shipping</a></li>
+                <li><a href="return  policy.html">Return Policy</a></li>
+				 <li><a href="term and conditions.html">Terms &amp; Conditions</a></li> 
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-column social-column">
+            <div class="column-icon heart-icon">♡</div>
+            <h3>Stay Connected</h3>
+            <div class="heading-line"></div>
+
+            <p class="social-description">
+                Follow our journey and be<br>
+                a part of our modest community.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://www.whatsapp.com/"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="footer-benefits">
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>Fast &amp; Secure<br>Delivery</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <p>100% Genuine<br>Products</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Modest Fashion<br>For a Better You</p>
+        </div>
+
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Bintaah by Choynika.
+            All rights reserved.
+        </p>
+
+        <div class="bottom-ornament">
+            <span></span>
+            <i>✿</i>
+            <span></span>
+        </div>
+    </div>
+
+</footer>
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".mobile-menu-btn");
+    const menu = document.querySelector(".header .menu");
+
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+});
+</script>
+
+</body>
+
+
+
+</html>

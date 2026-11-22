@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Confirmed | Bintaah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+
+    <!-- TOGGLE BUTTON - LEFT -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- LOGO - CENTER -->
+    <div class="logo">
+        <img src="logo.png" alt="Bintaah Logo">
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Our Collection</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- SEARCH + ACCOUNT + CART - RIGHT -->
+    <div class="header-icons">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search borka..." />
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <a href="account.html" class="account-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.2"/>
+                <path d="M5.5 20c.8-3.4 3.1-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/>
+            </svg>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M6 8h12l1 13H5L6 8Z"/>
+                <path d="M9 8a3 3 0 0 1 6 0"/>
+            </svg>
+        </a>
+
+    </div>
+
+</header>
+
+
+<section class="order-success">
+
+    <div class="success-icon">✓</div>
+
+    <p class="success-small">THANK YOU FOR SHOPPING WITH BINTAAH</p>
+
+    <h1>Order Confirmed</h1>
+
+    <p class="success-message">
+        Your order has been successfully placed.
+        We will contact you shortly to confirm your order.
+    </p>
+
+
+    <div class="order-box">
+
+        <h2>Order Details</h2>
+
+        <div id="orderDetails"></div>
+
+    </div>
+
+
+    <div class="success-buttons">
+	
+<a href="my-order.html" id="viewMyOrderBtn">
+    VIEW MY ORDER
+</a>
+
+
+        <a href="shop.html">
+            CONTINUE SHOPPING
+        </a>
+
+        <a href="index.html">
+            BACK TO HOME
+        </a>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+<script>
+
+    const viewMyOrderBtn =
+        document.getElementById(
+            "viewMyOrderBtn"
+        );
+
+
+    const lastOrder =
+        JSON.parse(
+            localStorage.getItem(
+                "bintaahLastOrder"
+            )
+        );
+
+
+    if (
+        viewMyOrderBtn &&
+        lastOrder &&
+        lastOrder.trackingToken
+    ) {
+
+        viewMyOrderBtn.href =
+            "my-order.html?token=" +
+            encodeURIComponent(
+                lastOrder.trackingToken
+            );
+
+    }
+
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".mobile-menu-btn");
+    const menu = document.querySelector(".header .menu");
+
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+});
+</script>
+
+
+</body>
+</html>

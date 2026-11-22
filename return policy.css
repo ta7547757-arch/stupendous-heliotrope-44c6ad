@@ -1,0 +1,1617 @@
+/* =====================================================
+   BINTAAH — RETURN POLICY
+   HEADER & FOOTER NOT INCLUDED
+===================================================== */
+
+
+/* ================= HERO ================= */
+
+/* ================= PAGE BACKGROUND ================= */
+
+body {
+    background: #e3d6e7;
+}
+
+.return-banner {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+}
+
+.return-banner img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.return-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(45, 25, 53, 0.28);
+    z-index: 1;
+}
+
+.return-banner-content {
+    position: absolute;
+    z-index: 2;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 750px;
+
+    text-align: center;
+    color: #ffffff;
+}
+
+.return-banner-content span {
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 4px;
+
+    color: #fff7ff;
+}
+
+.return-banner-content h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 1.15;
+
+    color: #ffffff;
+
+    text-shadow: 0 4px 18px rgba(45, 25, 53, 0.35);
+}
+
+.return-banner-content p {
+    margin: 15px 0 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+    font-style: italic;
+
+    color: #fff5ff;
+}
+
+
+/* ================= MAIN AREA ================= */
+
+.return-policy {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 85px 25px 110px;
+
+    box-sizing: border-box;
+}
+
+
+/* ================= INTRO ================= */
+
+.return-intro {
+    max-width: 700px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+}
+
+.return-intro > span {
+    display: block;
+
+    margin-bottom: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    color: #80608b;
+}
+
+.return-intro h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 54px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #351c3e;
+}
+
+.return-intro h2 em {
+    color: #9a5e91;
+    font-style: italic;
+}
+
+.return-intro p {
+    max-width: 600px;
+
+    margin: 20px auto 0;
+
+    font-size: 24px;
+    line-height: 1.8;
+
+    color: #675968;
+}
+
+
+/* ================= CARD LIST ================= */
+
+/*
+   IMPORTANT:
+   DESKTOP = 1 COLUMN
+   TABLET  = 1 COLUMN
+   MOBILE  = 1 COLUMN
+*/
+
+.return-list {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 25px;
+}
+
+
+/* ================= CARD ================= */
+
+.return-card {
+    position: relative;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 34px 35px 38px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(90, 55, 100, 0.10);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(70, 40, 80, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* DECORATIVE CIRCLE */
+
+.return-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    right: -80px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.30);
+
+    pointer-events: none;
+}
+
+.return-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    left: -40px;
+    bottom: -40px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    pointer-events: none;
+}
+
+
+/* ================= CARD COLORS ================= */
+
+.return-card:nth-child(1) {
+    background: linear-gradient(135deg, #f0e4f5, #e7d7ee);
+}
+
+.return-card:nth-child(2) {
+    background: linear-gradient(135deg, #f8e5ed, #f0d5e2);
+}
+
+.return-card:nth-child(3) {
+    background: linear-gradient(135deg, #eee3fa, #dfd0f1);
+}
+
+.return-card:nth-child(4) {
+    background: linear-gradient(135deg, #f8e7dc, #efd5c5);
+}
+
+.return-card:nth-child(5) {
+    background: linear-gradient(135deg, #e5f0ec, #d5e6df);
+}
+
+.return-card:nth-child(6) {
+    background: linear-gradient(135deg, #f2eadb, #e7dcc6);
+}
+
+.return-card:nth-child(7) {
+    background: linear-gradient(135deg, #f5e2eb, #ebcedd);
+}
+
+.return-card:nth-child(8) {
+    background: linear-gradient(135deg, #e5edf3, #d4e2ea);
+}
+
+.return-card:nth-child(9) {
+    background: linear-gradient(135deg, #eee2f2, #dfcde5);
+}
+
+.return-card:nth-child(10) {
+    background: linear-gradient(135deg, #f5e7dc, #edd8c9);
+}
+
+.return-card:nth-child(11) {
+    background: linear-gradient(135deg, #eae4f4, #ddd3eb);
+}
+
+.return-card:nth-child(12) {
+    background: linear-gradient(135deg, #f3e0ed, #e6d2e9);
+}
+
+
+/* ================= HOVER ================= */
+
+.return-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 45px rgba(70, 40, 80, 0.13);
+}
+
+
+/* ================= NUMBER ================= */
+
+.return-number {
+    position: relative;
+    z-index: 2;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    color: #684475;
+
+    box-shadow:
+        0 5px 15px rgba(70, 40, 80, 0.08);
+}
+
+
+/* ================= CONTENT ================= */
+
+.return-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+}
+
+
+/* ================= LABEL ================= */
+
+.return-label {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+}
+
+.return-label span {
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 2.5px;
+
+    color: #765b7d;
+}
+
+.return-label b {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    color: #8b5b82;
+
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+/* ================= TITLE ================= */
+
+.return-content h3 {
+    margin: 0 0 14px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    line-height: 1.3;
+
+    color: #351c3e;
+}
+
+
+/* ================= TEXT ================= */
+
+.return-content p {
+    margin: 0 0 14px;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+    color: #625565;
+}
+
+
+/* ================= LIST ================= */
+
+.return-content ul {
+    margin: 15px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.return-content li {
+    position: relative;
+
+    margin-bottom: 9px;
+
+    padding-left: 22px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #625565;
+}
+
+.return-content li::before {
+    content: "✦";
+
+    position: absolute;
+
+    left: 0;
+    top: 1px;
+
+    font-size: 9px;
+
+    color: #9a638f;
+}
+
+/* =====================================================
+   BINTAAH — CUSTOMER CARE
+===================================================== */
+
+.return-care {
+    width: 100%;
+
+    padding: 0 25px 105px;
+
+    box-sizing: border-box;
+}
+
+.return-care-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 1050px;
+
+    min-height: 350px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8c6df 0%,
+            #ead8e5 48%,
+            #d9cbe5 100%
+        );
+
+    border: 1px solid rgba(95, 60, 105, 0.12);
+
+    box-shadow:
+        0 18px 45px rgba(70, 40, 80, 0.10);
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.return-care-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.decoration-one {
+    width: 230px;
+    height: 230px;
+
+    top: -115px;
+    left: -75px;
+
+    background: rgba(255,255,255,0.28);
+}
+
+.decoration-two {
+    width: 190px;
+    height: 190px;
+
+    right: -70px;
+    bottom: -95px;
+
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* ================= CONTENT ================= */
+
+.return-care-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 620px;
+
+    padding: 55px 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/* ================= SMALL TITLE ================= */
+
+.return-care-small {
+    display: block;
+
+    margin-bottom: 17px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3.5px;
+
+    color: #76577f;
+}
+
+
+/* ================= ICON ================= */
+
+.return-care-icon {
+    width: 42px;
+    height: 42px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.60);
+
+    color: #895d86;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 6px 16px rgba(70,40,80,0.08);
+}
+
+
+/* ================= HEADING ================= */
+
+.return-care-content h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #351c3e;
+}
+
+.return-care-content h2 em {
+    color: #925d8a;
+
+    font-style: italic;
+}
+
+
+/* ================= TEXT ================= */
+
+.return-care-content p {
+    max-width: 540px;
+
+    margin: 17px auto 27px;
+
+    font-size: 13.5px;
+
+    line-height: 1.85;
+
+    color: #625565;
+}
+
+
+/* ================= BUTTON ================= */
+
+.return-care-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 30px;
+
+    background: #6b3b7d;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    box-shadow:
+        0 8px 20px rgba(75,40,93,0.18);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.return-care-button span {
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.return-care-button:hover {
+    background: #4b285d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(75,40,93,0.23);
+}
+
+.return-care-button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   BINTAAH — CUSTOMER CARE
+===================================================== */
+
+.return-care {
+    width: 100%;
+
+    padding: 0 25px 105px;
+
+    box-sizing: border-box;
+}
+
+.return-care-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 1050px;
+
+    min-height: 350px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d8c6df 0%,
+            #ead8e5 48%,
+            #d9cbe5 100%
+        );
+
+    border: 1px solid rgba(95, 60, 105, 0.12);
+
+    box-shadow:
+        0 18px 45px rgba(70, 40, 80, 0.10);
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.return-care-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.decoration-one {
+    width: 230px;
+    height: 230px;
+
+    top: -115px;
+    left: -75px;
+
+    background: rgba(255,255,255,0.28);
+}
+
+.decoration-two {
+    width: 190px;
+    height: 190px;
+
+    right: -70px;
+    bottom: -95px;
+
+    background: rgba(255,255,255,0.25);
+}
+
+
+/* ================= CONTENT ================= */
+
+.return-care-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 620px;
+
+    padding: 55px 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/* ================= SMALL TITLE ================= */
+
+.return-care-small {
+    display: block;
+
+    margin-bottom: 17px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 3.5px;
+
+    color: #76577f;
+}
+
+
+/* ================= ICON ================= */
+
+.return-care-icon {
+    width: 42px;
+    height: 42px;
+
+    margin: 0 auto 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.60);
+
+    color: #895d86;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 6px 16px rgba(70,40,80,0.08);
+}
+
+
+/* ================= HEADING ================= */
+
+.return-care-content h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 42px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: #351c3e;
+}
+
+.return-care-content h2 em {
+    color: #925d8a;
+
+    font-style: italic;
+}
+
+
+/* ================= TEXT ================= */
+
+.return-care-content p {
+    max-width: 540px;
+
+    margin: 17px auto 27px;
+
+    font-size: 13.5px;
+
+    line-height: 1.85;
+
+    color: #625565;
+}
+
+
+/* ================= BUTTON ================= */
+
+.return-care-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    min-height: 48px;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 30px;
+
+    background: #6b3b7d;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    box-shadow:
+        0 8px 20px rgba(75,40,93,0.18);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.return-care-button span {
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.return-care-button:hover {
+    background: #4b285d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(75,40,93,0.23);
+}
+
+.return-care-button:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =====================================================
+   BINTAAH RETURN POLICY
+   TABLET RESPONSIVE
+   768px - 1024px
+===================================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* BANNER */
+
+    .return-banner {
+        width: 100%;
+        height: 330px;
+    }
+
+    .return-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .return-banner-overlay {
+        inset: 0;
+    }
+
+    .return-banner-content {
+        width: 90%;
+        max-width: 700px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+
+    /* MAIN POLICY */
+
+    .return-policy {
+        width: 100%;
+        max-width: 100%;
+        padding: 65px 30px 85px;
+        box-sizing: border-box;
+    }
+
+
+    /* INTRO */
+
+    .return-intro {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto 45px;
+    }
+
+    .return-intro > span {
+		display: block;
+        margin-bottom: 12px;
+	
+    }
+
+    .return-intro h2 {
+        line-height: 1.25;
+    }
+
+    .return-intro p {
+        max-width: 600px;
+        margin: 18px auto 0;
+        line-height: 1.8;
+    }
+
+
+    /* CARD LIST */
+
+    .return-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 22px;
+    }
+
+
+    /* CARDS */
+
+    .return-card {
+        position: relative;
+        width: 100%;
+        padding: 30px 30px 34px;
+        box-sizing: border-box;
+        border-radius: 23px;
+        margin: 0;
+    }
+
+    .return-card::before {
+        width: 170px;
+        height: 170px;
+    }
+
+    .return-card::after {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    /* NUMBER */
+
+    .return-number {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 22px;
+    }
+
+
+    /* CONTENT */
+
+    .return-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .return-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .return-label b {
+		font-size:20px;
+        flex-shrink: 0;
+    }
+.return-label span {
+    font-size: 16px;
+}
+
+    .return-content h3 {
+		font-size:30px;
+        line-height: 1.3;
+        overflow-wrap: break-word;
+    }
+
+    .return-content p {
+		font-size:22px;
+        line-height: 1.8;
+        overflow-wrap: break-word;
+    }
+
+    .return-content ul {
+        margin-top: 15px;
+        padding-left: 0;
+    }
+
+    .return-content li {
+		font-size:16px;
+        padding-left: 22px;
+        line-height: 1.8;
+        overflow-wrap: break-word;
+    }
+
+
+    /* CUSTOMER CARE */
+
+    .return-care {
+        width: 100%;
+        padding: 0 30px 85px;
+        box-sizing: border-box;
+    }
+
+    .return-care-box {
+        width: 100%;
+        max-width: 100%;
+        min-height: 320px;
+        margin: 0 auto;
+        border-radius: 26px;
+    }
+
+    .return-care-decoration {
+        pointer-events: none;
+    }
+
+    .decoration-one {
+        width: 190px;
+        height: 190px;
+        top: -95px;
+        left: -65px;
+    }
+
+    .decoration-two {
+        width: 170px;
+        height: 170px;
+        right: -65px;
+        bottom: -85px;
+    }
+
+    .return-care-content {
+        width: 100%;
+        max-width: 620px;
+        padding: 45px 25px;
+        box-sizing: border-box;
+    }
+
+    .return-care-small {
+		font-size:16px;
+        margin-bottom: 15px;
+    }
+
+    .return-care-icon {
+        margin: 0 auto 16px;
+    }
+
+    .return-care-content h2 {
+        line-height: 1.25;
+    }
+
+    .return-care-content p {
+		font-size:18px;
+        max-width: 540px;
+        margin: 17px auto 25px;
+        line-height: 1.8;
+    }
+
+    .return-care-button {
+		font-size: 18px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 100%;
+        min-height: 48px;
+        padding: 0 22px;
+        box-sizing: border-box;
+    }
+
+    .return-care-button span {
+        flex-shrink: 0;
+    }
+
+}
+
+
+/* =====================================================
+   BINTAAH RETURN POLICY
+   MOBILE RESPONSIVE
+   381px - 767px
+===================================================== */
+
+@media (min-width: 381px) and (max-width: 767px) {
+
+    /* BANNER */
+
+    .return-banner {
+        width: 100%;
+        height: 270px;
+    }
+
+    .return-banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .return-banner-content {
+        width: 94%;
+        max-width: 100%;
+        padding: 18px;
+        box-sizing: border-box;
+    }
+
+    .return-banner-content span {
+		font-size:12px;
+        margin-bottom: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .return-banner-content h1 { 
+	font-size: 48px;
+        line-height: 1.2;
+        overflow-wrap: break-word;
+    }
+
+    .return-banner-content p {
+		font-size:21px;
+        margin-top: 10px;
+        line-height: 1.6;
+    }
+
+
+    /* MAIN POLICY */
+
+    .return-policy {
+        width: 100%;
+        max-width: 100%;
+        padding: 50px 18px 65px;
+        box-sizing: border-box;
+    }
+
+
+    /* INTRO */
+
+    .return-intro {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 38px;
+    }
+
+    .return-intro > span {
+        margin-bottom: 12px;
+        letter-spacing: 2.5px;
+    }
+
+    .return-intro h2 {
+		font-size: 38px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+    }
+
+    .return-intro p {
+		font-size:18px;
+        max-width: 100%;
+        margin: 16px auto 0;
+        line-height: 1.8;
+    }
+
+
+    /* CARD LIST */
+
+    .return-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 18px;
+    }
+
+
+    /* CARDS */
+
+    .return-card {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 27px 23px 30px;
+        box-sizing: border-box;
+        border-radius: 21px;
+    }
+
+    .return-card::before {
+        width: 145px;
+        height: 145px;
+    }
+
+    .return-card::after {
+        width: 75px;
+        height: 75px;
+    }
+
+
+    /* NUMBER */
+
+    .return-number {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 20px;
+    }
+
+
+    /* CONTENT */
+
+    .return-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .return-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .return-label b {
+        flex-shrink: 0;
+    }
+
+    .return-content h3 {
+		font-size:22px;
+        line-height: 1.3;
+        overflow-wrap: break-word;
+    }
+
+    .return-content p {
+        line-height: 1.8;
+        overflow-wrap: break-word;
+    }
+
+    .return-content ul {
+        margin: 13px 0 0;
+        padding: 0;
+    }
+
+    .return-content li {
+        padding-left: 20px;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+    }
+
+    .return-content li::before {
+        left: 0;
+    }
+
+
+    /* CUSTOMER CARE */
+
+    .return-care {
+        width: 100%;
+        padding: 0 18px 65px;
+        box-sizing: border-box;
+    }
+
+    .return-care-box {
+        width: 100%;
+        max-width: 100%;
+        min-height: 300px;
+        margin: 0 auto;
+        border-radius: 23px;
+    }
+
+    .return-care-decoration {
+        pointer-events: none;
+    }
+
+    .decoration-one {
+        width: 160px;
+        height: 160px;
+        top: -85px;
+        left: -60px;
+    }
+
+    .decoration-two {
+        width: 145px;
+        height: 145px;
+        right: -55px;
+        bottom: -75px;
+    }
+
+    .return-care-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+
+    .return-care-small {
+		font-size:12px;
+        margin-bottom: 14px;
+        letter-spacing: 2.5px;
+    }
+
+    .return-care-icon {
+        margin: 0 auto 14px;
+    }
+
+    .return-care-content h2 {
+		font-size:30px;
+        line-height: 1.25;
+        overflow-wrap: break-word;
+    }
+
+    .return-care-content p {
+        max-width: 100%;
+        margin: 15px auto 23px;
+        line-height: 1.8;
+    }
+
+    .return-care-button {
+		font-size:16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: auto;
+        max-width: 100%;
+        min-height: 46px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .return-care-button span {
+        flex-shrink: 0;
+    }
+
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+   320px - 380px
+===================================================== */
+
+@media (max-width: 380px) {
+
+    /* BANNER */
+
+    .return-banner {
+        height: 230px;
+    }
+
+    .return-banner-content {
+        width: 94%;
+        padding: 14px;
+    }
+
+    .return-banner-content span {
+		font-size:12px;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    .return-banner-content h1 {
+		font-size:42px;
+        line-height: 1.2;
+    }
+
+    .return-banner-content p {
+		font-size:14px;
+        margin-top: 8px;
+        line-height: 1.5;
+    }
+
+
+    /* MAIN POLICY */
+
+    .return-policy {
+        width: 100%;
+        padding: 45px 14px 60px;
+    }
+
+
+    /* INTRO */
+
+    .return-intro {
+        margin-bottom: 32px;
+    }
+
+    .return-intro > span {
+		font-size:12px;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+
+    .return-intro h2 {
+		font-size:34px;
+        line-height: 1.25;
+    }
+
+    .return-intro p {
+		font-size:16px;
+        margin-top: 14px;
+        line-height: 1.75;
+    }
+
+
+    /* CARD LIST */
+
+    .return-list {
+        width: 100%;
+        gap: 16px;
+    }
+
+
+    /* CARDS */
+
+    .return-card {
+        width: 100%;
+        margin: 0;
+        padding: 23px 18px 26px;
+        border-radius: 19px;
+    }
+
+    .return-card::before {
+        width: 125px;
+        height: 125px;
+    }
+
+    .return-card::after {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    /* NUMBER */
+
+    .return-number {
+        width: 43px;
+        height: 43px;
+        margin-bottom: 18px;
+    }
+
+
+    /* CONTENT */
+
+    .return-content {
+        width: 100%;
+    }
+
+    .return-label {
+        gap: 7px;
+        margin-bottom: 10px;
+    }
+
+    .return-label b {
+        width: 28px;
+        height: 28px;
+    }
+
+    .return-content h3 {
+		font-size:20px;
+        line-height: 1.3;
+    }
+
+    .return-content p {
+		font-size:14px;
+        line-height: 1.75;
+    }
+
+    .return-content ul {
+        margin-top: 12px;
+    }
+
+    .return-content li {
+        padding-left: 19px;
+        margin-bottom: 8px;
+        line-height: 1.75;
+    }
+
+
+    /* CUSTOMER CARE */
+
+    .return-care {
+        width: 100%;
+        padding: 0 14px 55px;
+    }
+
+    .return-care-box {
+        width: 100%;
+        min-height: 280px;
+        border-radius: 20px;
+    }
+
+    .decoration-one {
+        width: 130px;
+        height: 130px;
+        top: -70px;
+        left: -50px;
+    }
+
+    .decoration-two {
+        width: 120px;
+        height: 120px;
+        right: -45px;
+        bottom: -65px;
+    }
+
+    .return-care-content {
+        width: 100%;
+        padding: 32px 16px;
+    }
+
+    .return-care-small {
+		font-size:12px;
+        margin-bottom: 12px;
+        letter-spacing: 2px;
+    }
+
+    .return-care-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 12px;
+    }
+
+    .return-care-content h2 {
+		font-size:28px;
+        line-height: 1.25;
+    }
+
+    .return-care-content p {
+        margin: 13px auto 20px;
+        line-height: 1.7;
+    }
+
+    .return-care-button {
+		font-size:14px;
+        width: auto;
+        max-width: 100%;
+        min-height: 44px;
+        padding: 0 15px;
+        gap: 9px;
+    }
+
+}

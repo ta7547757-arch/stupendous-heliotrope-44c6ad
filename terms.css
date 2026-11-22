@@ -1,0 +1,641 @@
+/* =====================================================
+   BINTAAH BY CHOYNIKA
+   TERMS & CONDITIONS
+   ===================================================== */
+
+
+/* ================= RESET ================= */
+
+
+
+/* ================= BANNER ================= */
+
+.terms-banner {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+}
+
+.terms-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* Soft overlay */
+
+.terms-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(63, 36, 57, 0.40),
+            rgba(103, 65, 83, 0.16),
+            rgba(63, 36, 57, 0.25)
+        );
+}
+
+
+/* Banner text */
+
+.terms-banner-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #fffaf8;
+
+    padding: 20px;
+}
+
+.terms-banner-content span {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: 600;
+
+    margin-bottom: 13px;
+
+    opacity: 0.95;
+}
+
+.terms-banner-content h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 52px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 12px;
+
+    text-shadow: 0 4px 18px rgba(48, 25, 42, 0.25);
+}
+
+.terms-banner-content p {
+    font-size: 15px;
+    letter-spacing: 1.2px;
+
+    opacity: 0.95;
+}
+
+
+/* ================= MAIN SECTION ================= */
+
+body {
+    
+    background: #e7d8dc;
+    color: #3d2940;
+}
+
+.terms-policy {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 85px 25px 40px;
+}
+
+
+/* ================= INTRO ================= */
+
+.terms-intro {
+    text-align: center;
+
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+}
+
+.terms-intro > span {
+    display: inline-block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #76505f;
+
+    margin-bottom: 13px;
+}
+
+.terms-intro h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 40px;
+    font-weight: 500;
+
+    color: #4b285d;
+
+    margin-bottom: 18px;
+}
+
+.terms-intro h2 em {
+    color: #8d536c;
+    font-style: italic;
+}
+
+.terms-intro p {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    color: #624d5e;
+}
+
+
+/* ================= TERMS LIST ================= */
+
+.terms-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* ================= CARD ================= */
+
+.terms-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 34px 36px 38px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 28px rgba(72, 43, 65, 0.10);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Decorative glow */
+
+.terms-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.18);
+
+    right: -55px;
+    bottom: -70px;
+
+    pointer-events: none;
+}
+
+.terms-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.13);
+
+    left: -35px;
+    top: -35px;
+
+    pointer-events: none;
+}
+
+
+.terms-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 42px rgba(72, 43, 65, 0.17);
+}
+
+
+/* ================= NEW CARD COLORS ================= */
+
+.terms-card:nth-child(1) {
+    background: linear-gradient(135deg, #d9c2e9, #c5a8dc);
+}
+
+.terms-card:nth-child(2) {
+    background: linear-gradient(135deg, #e8bfd3, #d9a7c1);
+}
+
+.terms-card:nth-child(3) {
+    background: linear-gradient(135deg, #c8c7e8, #aaa9d4);
+}
+
+.terms-card:nth-child(4) {
+    background: linear-gradient(135deg, #e8c7b2, #d9ad91);
+}
+
+.terms-card:nth-child(5) {
+    background: linear-gradient(135deg, #c2ddd5, #a5c9bf);
+}
+
+.terms-card:nth-child(6) {
+    background: linear-gradient(135deg, #e2d0b0, #d0b98e);
+}
+
+.terms-card:nth-child(7) {
+    background: linear-gradient(135deg, #ddb9cf, #c994b3);
+}
+
+.terms-card:nth-child(8) {
+    background: linear-gradient(135deg, #bed4df, #9ebdca);
+}
+
+.terms-card:nth-child(9) {
+    background: linear-gradient(135deg, #d2bee2, #b89acb);
+}
+
+.terms-card:nth-child(10) {
+    background: linear-gradient(135deg, #e2c5b1, #cf9f83);
+}
+
+.terms-card:nth-child(11) {
+    background: linear-gradient(135deg, #c9c0df, #afa2cc);
+}
+
+.terms-card:nth-child(12) {
+    background: linear-gradient(135deg, #dfbfd4, #c99bb9);
+}
+
+.terms-card:nth-child(13) {
+    background: linear-gradient(135deg, #c5c0d8, #a69fbe);
+}
+
+
+/* ================= CARD TOP ================= */
+
+.card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+/* Number */
+
+.card-number {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.58);
+
+    color: #4b285d;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 14px rgba(72,43,65,0.08);
+}
+
+
+/* Symbol */
+
+.gold-symbol {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.48);
+
+    color: #6b3b7d;
+
+    font-size: 18px;
+}
+
+
+/* ================= LABEL ================= */
+
+.terms-label {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    color: #6d4a5c;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= HEADING ================= */
+
+.terms-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+    font-weight: 500;
+
+    color: #40283f;
+
+    margin-bottom: 14px;
+}
+
+
+/* ================= TEXT ================= */
+
+.terms-card p {
+    max-width: 900px;
+
+    font-size: 14.5px;
+    line-height: 1.9;
+
+    color: #503e4e;
+}
+
+
+/* ================= CONTACT BUTTON ================= */
+
+.terms-contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    background: #56334f;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    transition: all 0.3s ease;
+}
+
+.terms-contact-btn span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.terms-contact-btn:hover {
+    background: #40243b;
+
+    transform: translateY(-2px);
+}
+
+.terms-contact-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1024px) {
+
+    .terms-banner {
+        height: 330px;
+    }
+.terms-banner-content span {
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+    .terms-banner-content h1 {
+        font-size: 42px;
+    }
+
+.terms-banner-content p {
+        font-size: 20px;
+    }
+
+    .terms-policy {
+        padding: 65px 20px 85px;
+    }
+
+    .terms-intro {
+        margin-bottom: 40px;
+    }
+.terms-intro > span {
+	font-size: 16px;
+}
+
+    .terms-intro h2 {
+        font-size: 44px;
+    }
+	
+	.terms-intro p {
+        font-size: 20px;
+    }
+.terms-label {
+	font-size:14px;
+}
+   .terms-card h3 {
+	   font-size: 35px;
+   }
+   .terms-card p  {
+	   font-size: 20px;
+   }
+    .terms-card {
+        padding: 40px 28px 34px;
+    }
+   .terms-contact-btn {
+	   font-size: 18px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+
+    body {
+        background: #e7d8dc;
+    }
+
+
+    /* Banner */
+
+    .terms-banner {
+        height: 270px;
+    }
+
+    .terms-banner-content {
+        padding: 15px;
+    }
+
+    .terms-banner-content span {
+        font-size: 12px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 9px;
+    }
+
+    .terms-banner-content h1 {
+        font-size: 31px;
+
+        line-height: 1.2;
+
+        margin-bottom: 9px;
+    }
+
+    .terms-banner-content p {
+        font-size: 14px;
+
+        letter-spacing: 0.7px;
+    }
+
+
+    /* Main */
+
+    .terms-policy {
+        padding: 55px 15px 75px;
+    }
+
+
+    /* Intro */
+
+    .terms-intro {
+        margin-bottom: 32px;
+    }
+
+    .terms-intro > span {
+        font-size: 12px;
+
+        letter-spacing: 2px;
+    }
+
+    .terms-intro h2 {
+        font-size: 30px;
+
+        line-height: 1.3;
+
+        margin-bottom: 13px;
+    }
+
+    .terms-intro p {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+
+    /* Cards */
+
+    .terms-list {
+        gap: 18px;
+    }
+
+    .terms-card {
+        padding: 25px 22px 28px;
+
+        border-radius: 21px;
+    }
+
+
+    .card-top {
+        margin-bottom: 20px;
+    }
+
+    .card-number {
+        width: 44px;
+        height: 44px;
+
+        font-size: 15px;
+    }
+
+    .gold-symbol {
+        width: 37px;
+        height: 37px;
+
+        font-size: 16px;
+    }
+
+
+    .terms-label {
+        font-size: 12px;
+
+        letter-spacing: 1.8px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .terms-card h3 {
+        font-size: 24px;
+
+        line-height: 1.3;
+
+        margin-bottom: 11px;
+    }
+
+
+    .terms-card p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+
+    .terms-contact-btn {
+        width: 75%;
+
+        padding: 12px 18px;
+
+        font-size: 15px;
+    }
+
+}

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Account | Bintaah</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+<header class="header">
+
+
+    <!-- TOGGLE BUTTON - LEFT -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- LOGO - CENTER -->
+    <div class="logo">
+        <img src="logo.png" alt="Bintaah Logo">
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Our Collection</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- SEARCH + ACCOUNT + CART - RIGHT -->
+    <div class="header-icons">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search borka..." />
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <a href="account.html" class="account-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.2"/>
+                <path d="M5.5 20c.8-3.4 3.1-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/>
+            </svg>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M6 8h12l1 13H5L6 8Z"/>
+                <path d="M9 8a3 3 0 0 1 6 0"/>
+            </svg>
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ACCOUNT PAGE ================= -->
+
+<section class="account-page">
+
+    <div class="account-title">
+
+        <p>WELCOME TO BINTAAH</p>
+
+        <h1>My Account</h1>
+
+        <span>
+            Sign in to manage your account and view your orders.
+        </span>
+
+    </div>
+
+
+    <div class="account-container">
+
+
+        <!-- ================= LOGIN ================= -->
+
+        <div class="account-card account-login">
+
+            <div class="account-card-icon">
+                👤
+            </div>
+
+            <h2>Welcome Back</h2>
+
+            <p class="account-subtitle">
+                Login to continue shopping with Bintaah.
+            </p>
+
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="loginEmail"
+                placeholder="Enter your email"
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Enter your password"
+            >
+
+
+            <button
+                class="account-btn"
+                onclick="loginUser()">
+
+                LOGIN
+
+            </button>
+
+
+            <p id="loginMessage" class="account-message"></p>
+
+        </div>
+
+
+
+        <!-- ================= SIGN UP ================= -->
+
+        <div class="account-card account-signup">
+
+            <div class="account-card-icon">
+                ✨
+            </div>
+
+            <h2>Create Account</h2>
+
+            <p class="account-subtitle">
+                Create your Bintaah account and shop effortlessly.
+            </p>
+
+
+            <label>Email Address</label>
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Enter your email"
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Create a password"
+            >
+
+
+            <button
+                class="account-btn account-outline-btn"
+                onclick="signupUser()">
+
+                CREATE ACCOUNT
+
+            </button>
+
+
+            <p id="signupMessage" class="account-message"></p>
+
+        </div>
+
+
+
+        <!-- ================= LOGGED IN ================= -->
+
+        <div
+            id="loggedInBox"
+            class="account-card logged-in-card"
+            style="display:none;">
+
+            <div class="profile-circle">
+                👤
+            </div>
+
+            <p class="small-title">
+                WELCOME BACK
+            </p>
+
+            <h2>Bintaah Customer</h2>
+
+            <p id="userEmail" class="user-email"></p>
+
+
+            <div class="account-dashboard">
+
+                <a href="shop.html">
+                    Continue Shopping
+                </a>
+
+         	
+<a href="my-order.html" id="viewMyOrderBtn">
+    VIEW MY ORDER
+</a>
+
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                onclick="logoutUser()">
+
+                LOGOUT
+
+            </button>
+
+        </div>
+<a href="#" class="forgot-password" onclick="forgotPassword(); return false;">
+    Forgot Password?
+</a>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+const SUPABASE_URL =
+    "https://bxxkzthucjtltfwccpfs.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_v4Zf70CW1VN7kzCVhUGNtg_Pr1V8beF";
+
+const { createClient } = window.supabase;
+
+const supabaseClient =
+    createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+// ================= LOGIN =================
+
+async function loginUser() {
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+    const message =
+        document.getElementById("loginMessage");
+
+
+    if (!email || !password) {
+
+        message.textContent =
+            "Please enter your email and password.";
+
+        return;
+    }
+
+
+    const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+
+            email: email,
+            password: password
+
+        });
+
+
+    if (error) {
+
+        message.textContent =
+            error.message;
+
+        return;
+    }
+
+message.textContent =
+    "Login successful.";
+
+console.log("LOGIN SESSION:", data.session);
+
+showLoggedInUser(data.user);
+}
+
+// ================= FORGOT PASSWORD =================
+
+async function forgotPassword() {
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const message = document.getElementById("loginMessage");
+
+    if (!email) {
+        message.textContent = "Please enter your email first.";
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + "/reset-password.html"
+    });
+
+    if (error) {
+        message.textContent = error.message;
+        return;
+    }
+
+    message.textContent = "Password reset link sent. Please check your email.";
+
+}
+
+// ================= SIGN UP =================
+
+async function signupUser() {
+
+    const email =
+        document.getElementById("signupEmail").value.trim();
+
+    const password =
+        document.getElementById("signupPassword").value;
+
+    const message =
+        document.getElementById("signupMessage");
+
+
+    if (!email || !password) {
+
+        message.textContent =
+            "Please enter email and password.";
+
+        return;
+    }
+
+
+    if (password.length < 6) {
+
+        message.textContent =
+            "Password must be at least 6 characters.";
+
+        return;
+    }
+
+
+    const { data, error } =
+        await supabaseClient.auth.signUp({
+
+            email: email,
+            password: password
+
+        });
+
+
+    if (error) {
+
+        message.textContent =
+            error.message;
+
+        return;
+    }
+
+
+    message.textContent =
+        "Account created. Please check your email.";
+
+}
+
+
+
+// ================= SHOW USER =================
+
+function showLoggedInUser(user) {
+
+    document.querySelector(".account-login").style.display =
+        "none";
+
+    document.querySelector(".account-signup").style.display =
+        "none";
+
+    document.getElementById("loggedInBox").style.display =
+        "block";
+
+    document.getElementById("userEmail").textContent =
+        user.email;
+
+}
+
+
+
+// ================= CHECK USER =================
+
+async function checkUser() {
+
+    const { data } =
+        await supabaseClient.auth.getUser();
+
+
+    if (data.user) {
+
+        showLoggedInUser(data.user);
+
+    }
+
+}
+
+
+
+// ================= LOGOUT =================
+
+async function logoutUser() {
+
+    const { error } =
+        await supabaseClient.auth.signOut();
+
+
+    if (error) {
+
+        alert(error.message);
+
+        return;
+    }
+
+
+    location.reload();
+
+}
+
+
+checkUser();
+
+</script>
+
+
+<!-- BINTAAH PREMIUM FOOTER -->
+<footer class="bintaah-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            
+            <h2 class="brand-name">About Bintaah</h2>
+            
+
+            <p class="brand-tagline">
+                where elegance meets style
+            </p>
+
+            <div class="brand-divider">
+                <span></span><i>◆</i><span></span>
+            </div>
+
+            <p class="brand-description">
+                Bintaah is more than a brand,<br>
+                it's a reflection of faith, modesty<br>
+                and timeless elegance. We bring you<br>
+                premium borkas, hijabs and modest<br>
+                fashion for the modern Muslimah.
+            </p>
+
+            <p class="brand-values">
+                Modesty <b>·</b> Elegance <b>·</b> Grace
+            </p>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="footer-column">
+            <div class="column-icon flower-icon">❀</div>
+            <h3>Explore</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+				 <li><a href="shop.html">Our Collection</a></li>
+               <li><a href="about.html">About Us</a></li>
+                
+                 <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER CARE -->
+        <div class="footer-column">
+            <div class="column-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Customer Care</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="shipping and delivery.html">Delivery &amp; Shipping</a></li>
+                <li><a href="return  policy.html">Return Policy</a></li>
+				 <li><a href="term and conditions.html">Terms &amp; Conditions</a></li> 
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-column social-column">
+            <div class="column-icon heart-icon">♡</div>
+            <h3>Stay Connected</h3>
+            <div class="heading-line"></div>
+
+            <p class="social-description">
+                Follow our journey and be<br>
+                a part of our modest community.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://www.whatsapp.com/"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="footer-benefits">
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>Fast &amp; Secure<br>Delivery</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <p>100% Genuine<br>Products</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Modest Fashion<br>For a Better You</p>
+        </div>
+
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Bintaah by Choynika.
+            All rights reserved.
+        </p>
+
+        <div class="bottom-ornament">
+            <span></span>
+            <i>✿</i>
+            <span></span>
+        </div>
+    </div>
+
+</footer>
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".mobile-menu-btn");
+    const menu = document.querySelector(".header .menu");
+
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+});
+</script>
+
+
+
+</body>
+
+
+</html>
+

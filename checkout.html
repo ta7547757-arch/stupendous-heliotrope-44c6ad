@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Bintaah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <!-- TOGGLE BUTTON - LEFT -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- LOGO - CENTER -->
+    <div class="logo">
+        <img src="logo.png" alt="Bintaah Logo">
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Our Collection</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- SEARCH + ACCOUNT + CART - RIGHT -->
+    <div class="header-icons">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search borka..." />
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <a href="account.html" class="account-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.2"/>
+                <path d="M5.5 20c.8-3.4 3.1-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/>
+            </svg>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M6 8h12l1 13H5L6 8Z"/>
+                <path d="M9 8a3 3 0 0 1 6 0"/>
+            </svg>
+        </a>
+
+    </div>
+
+
+</header>
+
+
+<section class="checkout-page">
+
+    <div class="checkout-title">
+        <p>COMPLETE YOUR ORDER</p>
+        <h1>Checkout</h1>
+        <span>Enter your details to place your order.</span>
+    </div>
+
+
+    <div class="checkout-content">
+
+        <!-- CUSTOMER INFORMATION -->
+
+        <div class="checkout-form-box">
+
+            <h2>Delivery Information</h2>
+
+            <form id="checkoutForm">
+
+                <label>Full Name</label>
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Your full name"
+                    required
+                >
+
+                <label>Phone Number</label>
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="01XXXXXXXXX"
+                    required
+                >
+
+                <label>Delivery Area</label>
+
+                <select id="deliveryArea" required>
+
+                    <option value="">Select delivery area</option>
+                    <option value="inside">Inside Dhaka</option>
+                    <option value="outside">Outside Dhaka</option>
+
+                </select>
+
+
+                <label>Full Address</label>
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="House, Road, Area, District"
+                    required
+                ></textarea>
+
+
+                <div class="payment-box">
+
+                    <h3>Payment Method</h3>
+
+                    <div class="cod-option">
+
+                        <input
+                            type="radio"
+                            checked
+                            disabled
+                        >
+
+                        <div>
+                            <strong>Cash on Delivery</strong>
+                            <span>Pay when your order is delivered.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="place-order-btn">
+                    PLACE ORDER
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <div class="checkout-summary">
+
+            <h2>Your Order</h2>
+
+            <div id="checkoutItems">
+
+                <!-- Products will appear here -->
+
+            </div>
+
+
+            <div class="checkout-summary-row">
+
+                <span>Subtotal</span>
+
+                <strong id="checkoutSubtotal">
+                    ৳ 0
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-summary-row">
+
+                <span>Delivery</span>
+
+                <strong id="checkoutDelivery">
+                    ৳ 0
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-total">
+
+                <span>Total</span>
+
+                <strong id="checkoutTotal">
+                    ৳ 0
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+    const SUPABASE_URL = "https://bxxkzthucjtltfwccpfs.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_v4Zf70CW1VN7kzCVhUGNtg_Pr1V8beF";
+
+    const supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+</script>
+
+
+
+<!-- BINTAAH PREMIUM FOOTER -->
+<footer class="bintaah-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            
+            <h2 class="brand-name">About Bintaah</h2>
+            
+
+            <p class="brand-tagline">
+                where elegance meets style
+            </p>
+
+            <div class="brand-divider">
+                <span></span><i>◆</i><span></span>
+            </div>
+
+            <p class="brand-description">
+                Bintaah is more than a brand,<br>
+                it's a reflection of faith, modesty<br>
+                and timeless elegance. We bring you<br>
+                premium borkas, hijabs and modest<br>
+                fashion for the modern Muslimah.
+            </p>
+
+            <p class="brand-values">
+                Modesty <b>·</b> Elegance <b>·</b> Grace
+            </p>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="footer-column">
+            <div class="column-icon flower-icon">❀</div>
+            <h3>Explore</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+				 <li><a href="shop.html">Our Collection</a></li>
+               <li><a href="about.html">About Us</a></li>
+                
+                 <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER CARE -->
+        <div class="footer-column">
+            <div class="column-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Customer Care</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="shipping and delivery.html">Delivery &amp; Shipping</a></li>
+                <li><a href="return  policy.html">Return Policy</a></li>
+				 <li><a href="term and conditions.html">Terms &amp; Conditions</a></li> 
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-column social-column">
+            <div class="column-icon heart-icon">♡</div>
+            <h3>Stay Connected</h3>
+            <div class="heading-line"></div>
+
+            <p class="social-description">
+                Follow our journey and be<br>
+                a part of our modest community.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://www.whatsapp.com/"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="footer-benefits">
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>Fast &amp; Secure<br>Delivery</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <p>100% Genuine<br>Products</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Modest Fashion<br>For a Better You</p>
+        </div>
+
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Bintaah by Choynika.
+            All rights reserved.
+        </p>
+
+        <div class="bottom-ornament">
+            <span></span>
+            <i>✿</i>
+            <span></span>
+        </div>
+    </div>
+
+</footer>
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".mobile-menu-btn");
+    const menu = document.querySelector(".header .menu");
+
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+});
+</script>
+
+
+
+</body>
+
+
+
+</html>

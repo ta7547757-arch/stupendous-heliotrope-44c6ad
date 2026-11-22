@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bintaah Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body class="admin-page">
+
+
+<header class="admin-header">
+
+    <h1>BINTAAH ADMIN</h1>
+
+    <p>Order Management Dashboard</p>
+
+</header>
+
+
+<main class="admin-container">
+
+
+    <!-- DASHBOARD CARDS -->
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+            <span>📦</span>
+            <strong id="orderCount">0</strong>
+            <p>Total Orders</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <span>🆕</span>
+            <strong id="newOrders">0</strong>
+            <p>New Orders</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <span>🔄</span>
+            <strong id="processingOrders">0</strong>
+            <p>Processing</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <span>🚚</span>
+            <strong id="shippedOrders">0</strong>
+            <p>Shipped</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <span>✅</span>
+            <strong id="deliveredOrders">0</strong>
+            <p>Delivered</p>
+        </div>
+
+
+        <div class="dashboard-card">
+            <span>৳</span>
+            <strong id="totalSales">৳ 0</strong>
+            <p>Total Sales</p>
+        </div>
+
+    </div>
+
+
+    <!-- ORDERS TABLE -->
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Order ID</th>
+
+                    <th>Customer</th>
+
+                    <th>Phone</th>
+
+                    <th>Address</th>
+
+                    <th>Product</th>
+
+                    <th>Total</th>
+
+                    <th>Status</th>
+
+                    <th>Date</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="ordersTable">
+
+                <tr>
+
+                    <td colspan="9" class="empty">
+
+                        Loading orders...
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+</main>
+
+
+<!-- ORDER DETAILS POPUP -->
+
+<div id="orderModal" class="order-modal">
+
+    <div class="order-modal-content">
+
+        <button
+            class="close-modal"
+            onclick="closeOrderModal()">
+            ×
+        </button>
+
+
+        <h2>Order Details</h2>
+
+
+        <div id="orderDetails"></div>
+
+    </div>
+
+</div>
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+
+const SUPABASE_URL =
+    "https://bxxkzthucjtltfwccpfs.supabase.co";
+
+
+const SUPABASE_KEY =
+    "sb_publishable_v4Zf70CW1VN7kzCVhUGNtg_Pr1V8beF";
+
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+
+/* =========================
+   LOAD ORDERS
+   ========================= */
+
+async function loadOrders() {
+
+
+    const table =
+        document.getElementById("ordersTable");
+
+
+    const count =
+        document.getElementById("orderCount");
+
+
+    const { data, error } =
+        await supabaseClient
+
+        .from("orders")
+
+        .select("*")
+
+        .order(
+            "created_at",
+            {
+                ascending: false
+            }
+        );
+
+
+    if (error) {
+
+        console.error(error);
+
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td colspan="9" class="empty">
+
+                    Orders load হয়নি।
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* Save orders for View Details */
+
+    window.adminOrders = data;
+
+
+    /* =========================
+       DASHBOARD COUNTS
+       ========================= */
+
+
+    const newCount = data.filter(
+        order => order.status === "New"
+    ).length;
+
+
+    const processingCount = data.filter(
+        order => order.status === "Processing"
+    ).length;
+
+
+    const shippedCount = data.filter(
+        order => order.status === "Shipped"
+    ).length;
+
+
+    const deliveredCount = data.filter(
+        order => order.status === "Delivered"
+    ).length;
+
+
+    const sales = data
+
+        .filter(
+            order => order.status !== "Cancelled"
+        )
+
+        .reduce(
+            (sum, order) =>
+                sum + Number(order.total || 0),
+            0
+        );
+
+
+    count.textContent =
+        data.length;
+
+
+    document.getElementById(
+        "newOrders"
+    ).textContent =
+        newCount;
+
+
+    document.getElementById(
+        "processingOrders"
+    ).textContent =
+        processingCount;
+
+
+    document.getElementById(
+        "shippedOrders"
+    ).textContent =
+        shippedCount;
+
+
+    document.getElementById(
+        "deliveredOrders"
+    ).textContent =
+        deliveredCount;
+
+
+    document.getElementById(
+        "totalSales"
+    ).textContent =
+        "৳ " +
+        sales.toLocaleString();
+
+
+    /* =========================
+       NO ORDERS
+       ========================= */
+
+
+    if (data.length === 0) {
+
+        table.innerHTML = `
+
+            <tr>
+
+                <td colspan="9" class="empty">
+
+                    No orders yet.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* Clear table */
+
+    table.innerHTML = "";
+
+
+    /* =========================
+       SHOW ORDERS
+       ========================= */
+
+
+    data.forEach(function(order) {
+
+
+        let productText = "";
+
+
+        if (order.products) {
+
+            order.products.forEach(
+                function(product) {
+
+                    productText +=
+
+                        product.name +
+
+                        " | Size " +
+
+                        product.size +
+
+                        " | Qty " +
+
+                        product.quantity +
+
+                        "<br>";
+
+                }
+            );
+
+        }
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+
+            <td>
+
+                <strong>
+
+                    ${order.order_id}
+
+                </strong>
+
+            </td>
+
+
+            <td>
+
+                ${order.customer_name}
+
+            </td>
+
+
+            <td>
+
+                ${order.phone}
+
+            </td>
+
+
+            <td>
+
+                ${order.address}
+
+                <br>
+
+                ${order.delivery_area}
+
+            </td>
+
+
+            <td>
+
+                ${productText}
+
+            </td>
+
+
+            <td>
+
+                <strong>
+
+                    ৳ ${order.total}
+
+                </strong>
+
+            </td>
+
+
+            <td>
+
+
+                <select
+
+                    class="status-select"
+
+                    onchange="updateOrderStatus(
+                        '${order.id}',
+                        this.value
+                    )"
+
+                >
+
+
+                    <option
+
+                        value="New"
+
+                        ${order.status === "New"
+                            ? "selected"
+                            : ""}
+
+                    >
+
+                        New
+
+                    </option>
+
+
+                    <option
+
+                        value="Processing"
+
+                        ${order.status === "Processing"
+                            ? "selected"
+                            : ""}
+
+                    >
+
+                        Processing
+
+                    </option>
+
+
+                    <option
+
+                        value="Shipped"
+
+                        ${order.status === "Shipped"
+                            ? "selected"
+                            : ""}
+
+                    >
+
+                        Shipped
+
+                    </option>
+
+
+                    <option
+
+                        value="Delivered"
+
+                        ${order.status === "Delivered"
+                            ? "selected"
+                            : ""}
+
+                    >
+
+                        Delivered
+
+                    </option>
+
+
+                    <option
+
+                        value="Cancelled"
+
+                        ${order.status === "Cancelled"
+                            ? "selected"
+                            : ""}
+
+                    >
+
+                        Cancelled
+
+                    </option>
+
+
+                </select>
+
+
+            </td>
+
+
+            <td>
+
+                ${new Date(
+                    order.created_at
+                ).toLocaleString()}
+
+            </td>
+
+
+            <td>
+
+
+                <button
+
+                    class="view-order-btn"
+
+                    onclick="viewOrderDetails(
+                        ${order.id}
+                    )"
+
+                >
+
+                    View Details
+
+                </button>
+
+
+            </td>
+
+
+        `;
+
+
+        table.appendChild(row);
+
+
+    });
+
+}
+
+
+
+/* =========================
+   UPDATE STATUS
+   ========================= */
+
+
+async function updateOrderStatus(
+    orderId,
+    newStatus
+) {
+
+
+    const { error } =
+
+        await supabaseClient
+
+        .from("orders")
+
+        .update({
+
+            status: newStatus
+
+        })
+
+        .eq(
+            "id",
+            orderId
+        );
+
+
+    if (error) {
+
+        console.error(error);
+
+        alert(
+            "Status update failed."
+        );
+
+        return;
+
+    }
+
+
+    loadOrders();
+
+}
+
+
+
+/* =========================
+   VIEW ORDER DETAILS
+   ========================= */
+
+
+function viewOrderDetails(orderId) {
+
+
+    const order =
+        window.adminOrders.find(
+            item =>
+                item.id === orderId
+        );
+
+
+    if (!order) {
+
+        alert(
+            "Order not found."
+        );
+
+        return;
+
+    }
+
+
+    let productsHTML = "";
+
+
+    order.products.forEach(
+        function(product) {
+
+
+            productsHTML += `
+
+                <div
+                    style="
+                    padding:8px 0;
+                    border-bottom:1px solid #ddd;
+                    "
+                >
+
+                    <strong>
+
+                        ${product.name}
+
+                    </strong>
+
+                    <br>
+
+                    Size:
+                    ${product.size}
+
+                    |
+
+                    Quantity:
+                    ${product.quantity}
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    document.getElementById(
+        "orderDetails"
+    ).innerHTML = `
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Order ID
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ${order.order_id}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Customer
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ${order.customer_name}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Phone
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ${order.phone}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Address
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ${order.address}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Delivery Area
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ${order.delivery_area}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Payment
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ${order.payment_method}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-products">
+
+            <h3>
+
+                Products
+
+            </h3>
+
+            ${productsHTML}
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Subtotal
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ৳ ${order.subtotal}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-detail-row">
+
+            <span class="order-detail-label">
+
+                Delivery Charge
+
+            </span>
+
+            <span class="order-detail-value">
+
+                ৳ ${order.delivery_charge}
+
+            </span>
+
+        </div>
+
+
+        <div class="order-total">
+
+            <span>
+
+                Total
+
+            </span>
+
+            <span>
+
+                ৳ ${order.total}
+
+            </span>
+
+        </div>
+
+
+    `;
+
+
+    document.getElementById(
+        "orderModal"
+    ).style.display = "flex";
+
+}
+
+
+
+/* =========================
+   CLOSE POPUP
+   ========================= */
+
+
+function closeOrderModal() {
+
+
+    document.getElementById(
+        "orderModal"
+    ).style.display = "none";
+
+}
+
+
+
+/* =========================
+   START
+   ========================= */
+
+
+loadOrders();
+
+
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.querySelector(".mobile-menu-btn");
+    const menu = document.querySelector(".header .menu");
+
+    menuButton.addEventListener("click", function () {
+        menu.classList.toggle("active");
+    });
+
+});
+</script>
+
+
+</body>
+
+</html>
