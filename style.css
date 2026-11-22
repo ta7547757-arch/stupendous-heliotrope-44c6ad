@@ -9769,11 +9769,11 @@ display: inline-block;
     }
 
     .about-small-images img {
-        height: 125px;
+        height: 135px;
     }
 
     .about-main-image {
-        height: 400px;
+        height: 460px;
         border-radius: 110px 110px 0 0;
     }
 
