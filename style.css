@@ -1247,7 +1247,7 @@ background: linear-gradient(
 }
 
 
-/* MOBILE: 375px - 767px */
+/* MOBILE: 381px - 767px */
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
 
@@ -1349,7 +1349,7 @@ background: linear-gradient(
 
 /* SMALL MOBILE: 320px - 374px */
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 380px) {
 
     .colorful-collection {
         padding-left: 9px;
