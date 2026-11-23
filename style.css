@@ -11367,6 +11367,7 @@ display: inline-block;
 /* Mobile */
 @media (max-width: 600px) {
     .guest-tracking-section {
+		max-width:350px;
         margin: 25px 10px;
         padding: 22px 15px;
     }
@@ -11394,7 +11395,7 @@ display: inline-block;
     width: fit-content;
     margin: 15px auto 0;
     color: #6b3b7d;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease;
