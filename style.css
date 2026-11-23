@@ -11318,23 +11318,4 @@ display: inline-block;
 
 
 
-/* ==============================
-   FORGOT PASSWORD LINK
-============================== */
-
-.forgot-password {
-    display: block;
-    width: fit-content;
-    margin: 15px auto 0;
-    color: #6b3b7d;
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.forgot-password:hover {
-    color: #4b285d;
-    text-decoration: underline;
-}
 
