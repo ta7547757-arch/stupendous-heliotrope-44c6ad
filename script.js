@@ -704,20 +704,20 @@ user_id:
                     .select();
 
 
-                if (error) {
+               if (error) {
 
-                    console.error(
-                        "Supabase Order Error:",
-                        error
-                    );
+    console.error("ORDER ERROR MESSAGE:", error.message);
+    console.error("ORDER ERROR CODE:", error.code);
+    console.error("ORDER ERROR DETAILS:", error.details);
+    console.error("ORDER ERROR HINT:", error.hint);
 
-                    alert(
-                        "Order could not be placed. Please try again."
-                    );
+    alert(
+        "Order could not be placed. Please try again."
+    );
 
-                    return;
+    return;
 
-                }
+}
 
 
                 /* =========================
