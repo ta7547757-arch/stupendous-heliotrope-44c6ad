@@ -11315,6 +11315,8 @@ display: inline-block;
 
 }
 
+
+
 /* ==============================
    GUEST ORDER TRACKING
 ============================== */
@@ -11366,11 +11368,19 @@ display: inline-block;
 
 /* Mobile */
 @media (max-width: 767px) {
-    .guest-tracking-section {
-		max-width:350px;
-        margin: 25px 10px;
-        padding: 22px 15px;
-    }
+   .guest-tracking-section {
+    margin: 30px auto 25px;
+	justify-content: center;
+    padding: 25px 20px;
+    width: 100%;
+
+    max-width: 350px;
+    text-align: center;
+    background: #faf6fc;
+    border: 1px solid #e8d9ef;
+    border-radius: 12px;
+}
+
 
     .guest-tracking-section h3 {
         font-size: 18px;
@@ -11399,7 +11409,7 @@ display: inline-block;
     border: 1px solid #e8d9ef;
     border-radius: 12px;
 }
-}		
+
 
 /* ==============================
    FORGOT PASSWORD LINK
