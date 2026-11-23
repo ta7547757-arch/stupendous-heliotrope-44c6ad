@@ -1,0 +1,701 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Guest Order Tracking | Bintaah</title>
+   <link rel="stylesheet" href="style.css">
+    <style>
+        * 
+        .tracking-page {
+            min-height: 75vh;
+            padding: 65px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .tracking-container {
+            width: 100%;
+            max-width: 620px;
+            background: #fff;
+            padding: 42px;
+            border-radius: 18px;
+            box-shadow: 0 8px 35px rgba(55, 28, 65, 0.08);
+        }
+
+        .tracking-heading {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .tracking-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .tracking-heading h1 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 12px;
+            color: #4b285d;
+        }
+
+        .tracking-heading p {
+            color: #777;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .tracking-form label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 18px 0 8px;
+        }
+
+        .tracking-form input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ded4e3;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .tracking-form input:focus {
+            border-color: #8b65a0;
+        }
+
+        .tracking-btn {
+            width: 100%;
+            padding: 16px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 30px;
+            background: #4b285d;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .tracking-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #trackingMessage {
+            text-align: center;
+            margin-top: 18px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .tracking-result {
+            display: none;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .tracking-result h2 {
+            color: #4b285d;
+            font-family: Georgia, serif;
+            margin-bottom: 20px;
+        }
+
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 13px 0;
+            border-bottom: 1px solid #f0eaf2;
+            font-size: 14px;
+        }
+
+        .result-row strong {
+            text-align: right;
+            overflow-wrap: anywhere;
+        }
+
+        .status-value {
+            color: #79529a;
+        }
+
+        .product-list {
+            margin-top: 22px;
+        }
+
+        .product-list h3 {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .product-item {
+            padding: 12px;
+            margin-bottom: 9px;
+            background: #faf7fb;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-wrap: anywhere;
+        }
+
+        
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 22px;
+            color: #684477;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .tracking-page {
+                padding: 35px 15px;
+            }
+
+            .tracking-container {
+                padding: 27px 20px;
+            }
+
+            .tracking-heading h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+
+    <!-- TOGGLE BUTTON - LEFT -->
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- LOGO - CENTER -->
+    <div class="logo">
+        <img src="logo.png" alt="Bintaah Logo">
+    </div>
+
+    <!-- MENU -->
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Our Collection</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- SEARCH + ACCOUNT + CART - RIGHT -->
+    <div class="header-icons">
+
+        <div class="search-box">
+            <input type="text" placeholder="Search borka..." />
+            <span class="search-icon">⌕</span>
+        </div>
+
+        <a href="account.html" class="account-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <circle cx="12" cy="8" r="3.2"/>
+                <path d="M5.5 20c.8-3.4 3.1-5.2 6.5-5.2s5.7 1.8 6.5 5.2"/>
+            </svg>
+        </a>
+
+        <a href="cart.html" class="cart-icon">
+
+            <svg width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor"
+                 stroke-width="1.6" stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M6 8h12l1 13H5L6 8Z"/>
+                <path d="M9 8a3 3 0 0 1 6 0"/>
+            </svg>
+        </a>
+
+    </div>
+
+
+</header>
+
+
+
+<main class="tracking-page">
+
+    <div class="tracking-container">
+
+        <div class="tracking-heading">
+            <div class="tracking-icon">📦</div>
+
+            <h1>Track Your Order</h1>
+
+            <p>
+                Enter your Order ID and Tracking Token
+                to check your order status.
+            </p>
+        </div>
+
+        <form id="trackingForm" class="tracking-form">
+
+            <label for="orderId">Order ID</label>
+
+            <input
+                type="text"
+                id="orderId"
+                placeholder="Enter your Order ID"
+                required
+            >
+
+            <label for="trackingToken">Tracking Token</label>
+
+            <input
+                type="password"
+                id="trackingToken"
+                placeholder="Enter your Tracking Token"
+                autocomplete="off"
+                required
+            >
+
+            <button
+                type="submit"
+                class="tracking-btn"
+                id="trackingButton"
+            >
+                TRACK MY ORDER
+            </button>
+
+        </form>
+
+        <p id="trackingMessage" aria-live="polite"></p>
+
+        <div id="trackingResult" class="tracking-result">
+
+            <h2>Order Details</h2>
+
+            <div class="result-row">
+                <span>Order ID</span>
+                <strong id="resultOrderId"></strong>
+            </div>
+
+            <div class="result-row">
+                <span>Order Status</span>
+                <strong id="resultStatus" class="status-value"></strong>
+            </div>
+
+            <div class="result-row">
+                <span>Subtotal</span>
+                <strong id="resultSubtotal"></strong>
+            </div>
+
+            <div class="result-row">
+                <span>Delivery Charge</span>
+                <strong id="resultDelivery"></strong>
+            </div>
+
+            <div class="result-row">
+                <span>Total</span>
+                <strong id="resultTotal"></strong>
+            </div>
+
+            <div class="product-list">
+                <h3>Ordered Products</h3>
+                <div id="resultProducts"></div>
+            </div>
+
+        </div>
+
+        <a href="account.html" class="back-link">
+            Back to My Account
+        </a>
+
+    </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL =
+    "https://bxxkzthucjtltfwccpfs.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_v4Zf70CW1VN7kzCVhUGNtg_Pr1V8beF";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+const trackingForm =
+    document.getElementById("trackingForm");
+
+const trackingButton =
+    document.getElementById("trackingButton");
+
+const trackingMessage =
+    document.getElementById("trackingMessage");
+
+const trackingResult =
+    document.getElementById("trackingResult");
+
+
+/* =========================
+   AUTO FILL FROM URL
+========================= */
+
+const urlParams =
+    new URLSearchParams(window.location.search);
+
+const urlOrderId =
+    urlParams.get("order_id");
+
+const urlTrackingToken =
+    urlParams.get("tracking_token");
+
+
+if (urlOrderId && urlTrackingToken) {
+
+    document.getElementById("orderId").value =
+        urlOrderId;
+
+    document.getElementById("trackingToken").value =
+        urlTrackingToken;
+
+}
+
+
+/* =========================
+   SHOW PRODUCTS
+========================= */
+
+function showProducts(products) {
+
+    const container =
+        document.getElementById("resultProducts");
+
+    container.replaceChildren();
+
+    if (!Array.isArray(products) || products.length === 0) {
+
+        const item = document.createElement("div");
+        item.className = "product-item";
+        item.textContent = "Product details unavailable.";
+
+        container.appendChild(item);
+
+        return;
+    }
+
+    products.forEach(product => {
+
+        const item = document.createElement("div");
+        item.className = "product-item";
+
+        const name =
+            product.name ||
+            product.title ||
+            product.product_name ||
+            product.productName ||
+            "Product";
+
+        const quantity =
+            product.quantity ??
+            product.qty ??
+            1;
+
+        item.textContent =
+            name + " × " + quantity;
+
+        container.appendChild(item);
+
+    });
+
+}
+
+
+/* =========================
+   TRACK ORDER FUNCTION
+========================= */
+
+async function trackOrder(event) {
+
+    if (event) {
+        event.preventDefault();
+    }
+
+    trackingResult.style.display = "none";
+
+    trackingMessage.textContent =
+        "Checking your order...";
+
+    trackingButton.disabled = true;
+
+    trackingButton.textContent =
+        "PLEASE WAIT...";
+
+    const orderId =
+        document.getElementById("orderId").value.trim();
+
+    const trackingToken =
+        document.getElementById("trackingToken").value.trim();
+
+    try {
+
+        const { data, error } =
+            await supabaseClient.functions.invoke(
+                "guest-order-tracking",
+                {
+                    body: {
+                        order_id: orderId,
+                        tracking_token: trackingToken
+                    }
+                }
+            );
+
+        if (error) {
+            throw error;
+        }
+
+        if (!data || !data.success || !data.order) {
+
+            throw new Error(
+                data?.message || "Order not found."
+            );
+
+        }
+
+        const order = data.order;
+
+        document.getElementById("resultOrderId")
+            .textContent = order.order_id || "";
+
+        document.getElementById("resultStatus")
+            .textContent = order.status || "Pending";
+
+        document.getElementById("resultSubtotal")
+            .textContent = "৳ " + Number(order.subtotal || 0);
+
+        document.getElementById("resultDelivery")
+            .textContent = "৳ " + Number(order.delivery_charge || 0);
+
+        document.getElementById("resultTotal")
+            .textContent = "৳ " + Number(order.total || 0);
+
+        showProducts(order.products);
+
+        trackingMessage.textContent =
+            "Your order was found successfully.";
+
+        trackingResult.style.display = "block";
+
+    }
+
+    catch(error) {
+
+        console.error("Tracking Error:", error);
+
+        trackingMessage.textContent =
+            "Order not found. Please check your Order ID and Tracking Token.";
+
+    }
+
+    finally {
+
+        trackingButton.disabled = false;
+
+        trackingButton.textContent =
+            "TRACK MY ORDER";
+
+    }
+
+}
+
+
+/* =========================
+   FORM SUBMIT
+========================= */
+
+trackingForm.addEventListener(
+    "submit",
+    trackOrder
+);
+
+
+/* =========================
+   AUTO TRACK GUEST ORDER
+========================= */
+
+if (urlOrderId && urlTrackingToken) {
+
+    trackOrder();
+
+}
+
+</script>
+
+
+
+<!-- BINTAAH PREMIUM FOOTER -->
+<footer class="bintaah-footer">
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+            
+            <h2 class="brand-name">About Bintaah</h2>
+            
+
+            <p class="brand-tagline">
+                where elegance meets style
+            </p>
+
+            <div class="brand-divider">
+                <span></span><i>◆</i><span></span>
+            </div>
+
+            <p class="brand-description">
+                Bintaah is more than a brand,<br>
+                it's a reflection of faith, modesty<br>
+                and timeless elegance. We bring you<br>
+                premium borkas, hijabs and modest<br>
+                fashion for the modern Muslimah.
+            </p>
+
+            <p class="brand-values">
+                Modesty <b>·</b> Elegance <b>·</b> Grace
+            </p>
+        </div>
+
+        <!-- EXPLORE -->
+        <div class="footer-column">
+            <div class="column-icon flower-icon">❀</div>
+            <h3>Explore</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+				 <li><a href="shop.html">Our Collection</a></li>
+               <li><a href="about.html">About Us</a></li>
+                
+                 <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- CUSTOMER CARE -->
+        <div class="footer-column">
+            <div class="column-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Customer Care</h3>
+            <div class="heading-line"></div>
+
+            <ul class="footer-links">
+                <li><a href="shipping and delivery.html">Delivery &amp; Shipping</a></li>
+                <li><a href="return  policy.html">Return Policy</a></li>
+				 <li><a href="term and conditions.html">Terms &amp; Conditions</a></li> 
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- SOCIAL -->
+        <div class="footer-column social-column">
+            <div class="column-icon heart-icon">♡</div>
+            <h3>Stay Connected</h3>
+            <div class="heading-line"></div>
+
+            <p class="social-description">
+                Follow our journey and be<br>
+                a part of our modest community.
+            </p>
+
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"
+                   aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="https://www.instagram.com/"
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.youtube.com/"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="https://www.whatsapp.com/"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BENEFITS -->
+    <div class="footer-benefits">
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-truck-fast"></i>
+            <p>Fast &amp; Secure<br>Delivery</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <p>100% Genuine<br>Products</p>
+        </div>
+
+        <div class="benefit-item">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Modest Fashion<br>For a Better You</p>
+        </div>
+
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="footer-bottom">
+        <p>
+            © 2026 Bintaah by Choynika.
+            All rights reserved.
+        </p>
+
+        <div class="bottom-ornament">
+            <span></span>
+            <i>✿</i>
+            <span></span>
+        </div>
+    </div>
+
+</footer>
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<script src="products.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
