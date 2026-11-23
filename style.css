@@ -11366,34 +11366,6 @@ display: inline-block;
     box-shadow: 0 5px 14px rgba(75, 40, 93, 0.2);
 }
 
-/* Mobile */
-@media (max-width: 767px) {
-   .guest-tracking-section {
-    margin: 30px auto 25px;
-	justify-content: center;
-    padding: 25px 20px;
-    width: 100%;
-	   max-width:370px;
-    text-align: center;
-    background: #faf6fc;
-    border: 1px solid #e8d9ef;
-    border-radius: 12px;
-}
-
-
-    .guest-tracking-section h3 {
-        font-size: 18px;
-    }
-
-    .guest-tracking-section p {
-        font-size: 13px;
-    }
-
-    .guest-tracking-section a {
-        padding: 11px 24px;
-        font-size: 12px;
-    }
-}
 
 @media (max-width: 380px) {
 .guest-tracking-section {
