@@ -11365,7 +11365,7 @@ display: inline-block;
 }
 
 /* Mobile */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
     .guest-tracking-section {
 		max-width:350px;
         margin: 25px 10px;
@@ -11384,6 +11384,20 @@ display: inline-block;
         padding: 11px 24px;
         font-size: 12px;
     }
+}
+
+@media (max-width: 380px) {
+.guest-tracking-section {
+    margin: 30px auto 25px;
+	justify-content: center;
+    padding: 25px 20px;
+    width: 100%;
+
+    max-width: 350px;
+    text-align: center;
+    background: #faf6fc;
+    border: 1px solid #e8d9ef;
+    border-radius: 12px;
 }
 
 /* ==============================
