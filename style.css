@@ -11373,8 +11373,7 @@ display: inline-block;
 	justify-content: center;
     padding: 25px 20px;
     width: 100%;
-
-    max-width: 370px;
+	   max-width:350px;
     text-align: center;
     background: #faf6fc;
     border: 1px solid #e8d9ef;
@@ -11408,6 +11407,7 @@ display: inline-block;
     background: #faf6fc;
     border: 1px solid #e8d9ef;
     border-radius: 12px;
+}
 }
 
 
