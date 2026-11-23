@@ -700,8 +700,7 @@ user_id:
                                 "New"
 
                         }
-                    ])
-                    .select();
+                    ]);
 
 
                if (error) {
